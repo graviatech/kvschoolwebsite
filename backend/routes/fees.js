@@ -75,18 +75,6 @@ router.put("/", async (req, res) => {
 });
 
 // POST create or update student (admin)
-// router.post("/student", async (req, res) => {
-//   try {
-//     const s = await Student.findOneAndUpdate(
-//       { admissionNo: req.body.admissionNo },
-//       req.body,
-//       { upsert: true, new: true }
-//     );
-//     res.status(200).json({ success: true, data: s, message: "Student saved" });
-//   } catch (err) {
-//     res.status(500).json({ success: false, error: err.message });
-//   }
-// });
 // Create or update student fee overrides (admin)
 router.post("/student", async (req, res) => {
   try {

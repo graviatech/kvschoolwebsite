@@ -129,165 +129,165 @@
 
 
 
-// import React, { useEffect, useState, useRef } from "react";
-// import axios from "axios";
-// import "../styles/main.css";
+import React, { useEffect, useState, useRef } from "react";
+import axios from "axios";
+import "../styles/main.css";
 
-// export default function Home() {
-//   const [data, setData] = useState(null);
-//   const [activityIndex, setActivityIndex] = useState(0);
-//   const [bannerIndex, setBannerIndex] = useState(0);
-//   const activityInterval = useRef(null);
-//   const bannerInterval = useRef(null);
+export default function Home() {
+  const [data, setData] = useState(null);
+  const [activityIndex, setActivityIndex] = useState(0);
+  const [bannerIndex, setBannerIndex] = useState(0);
+  const activityInterval = useRef(null);
+  const bannerInterval = useRef(null);
 
-//   useEffect(() => {
-//     axios
-//       .get("http://localhost:5000/api/home")
-//       .then((res) => setData(res.data))
-//       .catch((err) => console.error(err));
-//   }, []);
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/api/home")
+      .then((res) => setData(res.data))
+      .catch((err) => console.error(err));
+  }, []);
 
-//   useEffect(() => {
-//     if (data?.activities?.length > 1) {
-//       activityInterval.current = setInterval(() => {
-//         setActivityIndex((prev) =>
-//           prev === data.activities.length - 1 ? 0 : prev + 1
-//         );
-//       }, 3000);
-//     }
-//     return () => clearInterval(activityInterval.current);
-//   }, [data?.activities]);
+  useEffect(() => {
+    if (data?.activities?.length > 1) {
+      activityInterval.current = setInterval(() => {
+        setActivityIndex((prev) =>
+          prev === data.activities.length - 1 ? 0 : prev + 1
+        );
+      }, 3000);
+    }
+    return () => clearInterval(activityInterval.current);
+  }, [data?.activities]);
 
-//   useEffect(() => {
-//     if (data?.bannerVideos?.length > 1) {
-//       bannerInterval.current = setInterval(() => {
-//         setBannerIndex((prev) =>
-//           prev === data.bannerVideos.length - 1 ? 0 : prev + 1
-//         );
-//       }, 5000);
-//     }
-//     return () => clearInterval(bannerInterval.current);
-//   }, [data?.bannerVideos]);
+  useEffect(() => {
+    if (data?.bannerVideos?.length > 1) {
+      bannerInterval.current = setInterval(() => {
+        setBannerIndex((prev) =>
+          prev === data.bannerVideos.length - 1 ? 0 : prev + 1
+        );
+      }, 5000);
+    }
+    return () => clearInterval(bannerInterval.current);
+  }, [data?.bannerVideos]);
 
-//   if (!data) return <p>Loading...</p>;
+  if (!data) return <p>Loading...</p>;
 
-//   const togglePlayPause = (e) => {
-//     const video = e.currentTarget;
-//     if (video.paused) video.play();
-//     else video.pause();
-//   };
+  const togglePlayPause = (e) => {
+    const video = e.currentTarget;
+    if (video.paused) video.play();
+    else video.pause();
+  };
 
-//   const getEmbedUrl = (url) => {
-//     if (!url) return "";
-//     if (url.includes("embed")) return url;
-//     const match = url.match(/(?:v=|\.be\/)([a-zA-Z0-9_-]{11})/);
-//     return match ? `https://www.youtube.com/embed/${match[1]}` : "";
-//   };
+  const getEmbedUrl = (url) => {
+    if (!url) return "";
+    if (url.includes("embed")) return url;
+    const match = url.match(/(?:v=|\.be\/)([a-zA-Z0-9_-]{11})/);
+    return match ? `https://www.youtube.com/embed/${match[1]}` : "";
+  };
 
-//   return (
-//     <main className="home-container">
-//       {/* Banner Section */}
-//       {data.bannerVideos?.length > 0 && (
-//         <section className="banner-section">
-//           <video
-//             key={bannerIndex}
-//             className="banner-video"
-//             src={`http://localhost:5000${data.bannerVideos[bannerIndex]}`}
-//             autoPlay
-//             muted
-//             loop
-//             onClick={togglePlayPause}
-//           />
-//         </section>
-//       )}
+  return (
+    <main className="home-container">
+      {/* Banner Section */}
+      {data.bannerVideos?.length > 0 && (
+        <section className="banner-section">
+          <video
+            key={bannerIndex}
+            className="banner-video"
+            src={`http://localhost:5000${data.bannerVideos[bannerIndex]}`}
+            autoPlay
+            muted
+            loop
+            onClick={togglePlayPause}
+          />
+        </section>
+      )}
 
-//       {/* Welcome + Activities */}
-//       <section className="welcome-activities-container">
-//         <div
-//           className="welcome-text"
-//           dangerouslySetInnerHTML={{ __html: data.welcomeText }}
-//         ></div>
+      {/* Welcome + Activities */}
+      <section className="welcome-activities-container">
+        <div
+          className="welcome-text"
+          dangerouslySetInnerHTML={{ __html: data.welcomeText }}
+        ></div>
 
-//         <div className="activities-slider-wrapper">
-//           <h3 style={{color: "#0078d4", fontSize:"30px"}}>School Activities</h3>
-//           {data.activities.length > 0 && (
-//             <div className="activities-slider-single">
-//               <img
-//                 key={activityIndex}
-//                 src={`http://localhost:5000${data.activities[activityIndex]}`}
-//                 alt={`activity-${activityIndex}`}
-//               />
-//             </div>
-//           )}
-//         </div>
-//       </section>
+        <div className="activities-slider-wrapper">
+          <h3 style={{color: "#0078d4", fontSize:"30px"}}>School Activities</h3>
+          {data.activities.length > 0 && (
+            <div className="activities-slider-single">
+              <img
+                key={activityIndex}
+                src={`http://localhost:5000${data.activities[activityIndex]}`}
+                alt={`activity-${activityIndex}`}
+              />
+            </div>
+          )}
+        </div>
+      </section>
 
-//       {/* 3-Column Section */}
-//       {data.threeColumnSection && (
-//         <section className="three-column-section">
-//           <div className="column">
-//             <h2>Latest News</h2>
-//             <h3>{data.threeColumnSection?.latestNewsHeading || "Latest News"}</h3>
-//             <p>
-//               {data.threeColumnSection?.latestNewsParagraph ||
-//               "News description goes here."}
-//             </p>
-//           </div>
+      {/* 3-Column Section */}
+      {data.threeColumnSection && (
+        <section className="three-column-section">
+          <div className="column">
+            <h2>Latest News</h2>
+            <h3>{data.threeColumnSection?.latestNewsHeading || "Latest News"}</h3>
+            <p>
+              {data.threeColumnSection?.latestNewsParagraph ||
+              "News description goes here."}
+            </p>
+          </div>
 
-//           <div className="column">
-//             <h2>Activity Calendar</h2>
-//             {data.threeColumnSection.activityCalendar && (
-//               <>
-//                 <img
-//                   src={data.threeColumnSection.activityCalendar} alt="Calendar"
-//                 />
-//                 <button className="view-calender-btn"
-//                   onClick={() =>
-//                     window.open(data.threeColumnSection.activityCalendar, "_blank")
-//                   }
-//                 >
-//                   View Full Calendar
-//                 </button>
-//               </>
-//             )}
-//           </div>
+          <div className="column">
+            <h2>Activity Calendar</h2>
+            {data.threeColumnSection.activityCalendar && (
+              <>
+                <img
+                  src={data.threeColumnSection.activityCalendar} alt="Calendar"
+                />
+                <button className="view-calender-btn"
+                  onClick={() =>
+                    window.open(data.threeColumnSection.activityCalendar, "_blank")
+                  }
+                >
+                  View Full Calendar
+                </button>
+              </>
+            )}
+          </div>
 
-//           <div className="column">
-//             <h2>KV Videos</h2>
-//             {data.threeColumnSection.video && (
-//               <iframe
-//                 width="100%"
-//                 height="200"
-//                 src={getEmbedUrl(data.threeColumnSection.video)}
-//                 title="YouTube video"
-//                 frameBorder="0"
-//                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-//                 allowFullScreen
-//               ></iframe>
-//             )}
-//           </div>
-//         </section>
-//       )}
+          <div className="column">
+            <h2>KV Videos</h2>
+            {data.threeColumnSection.video && (
+              <iframe
+                width="100%"
+                height="200"
+                src={getEmbedUrl(data.threeColumnSection.video)}
+                title="YouTube video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            )}
+          </div>
+        </section>
+      )}
 
-//       {/* Testimonials */}
-//       {data.testimonialVideos?.length > 0 && (
-//         <section className="testimonials">
-//           <h2 style={{color: "#0078d4", fontSize:"30px"}}>Student Testimonials</h2>
-//           <div className="testimonial-grid">
-//             {data.testimonialVideos.map((vid, i) => (
-//               <video
-//                 key={i}
-//                 src={`http://localhost:5000${vid}`}
-//                 controls
-//                 className="testimonial-video"
-//               />
-//             ))}
-//           </div>
-//         </section>
-//       )}
-//     </main>
-//   );
-// }
+      {/* Testimonials */}
+      {data.testimonialVideos?.length > 0 && (
+        <section className="testimonials">
+          <h2 style={{color: "#0078d4", fontSize:"30px"}}>Student Testimonials</h2>
+          <div className="testimonial-grid">
+            {data.testimonialVideos.map((vid, i) => (
+              <video
+                key={i}
+                src={`http://localhost:5000${vid}`}
+                controls
+                className="testimonial-video"
+              />
+            ))}
+          </div>
+        </section>
+      )}
+    </main>
+  );
+}
 
 
 

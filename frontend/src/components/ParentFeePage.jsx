@@ -482,6 +482,181 @@
 
 
 
+// // src/components/ParentFeePage.jsx
+// import React, { useState } from "react";
+// import axios from "axios";
+// import Swal from "sweetalert2";
+// import toast, { Toaster } from "react-hot-toast";
+// import "../styles/main.css";
+
+
+// export default function ParentFeePage() {
+//   const [admissionNo, setAdmissionNo] = useState("");
+//   const [data, setData] = useState(null);
+//   const [amount, setAmount] = useState("");
+
+//   // helper: class-based fee heads
+//   const getFeeKeysForClass = (cls) => {
+//     const c = Number(cls);
+//     if (c >= 1 && c <= 5) return ["development", "transport"];
+//     if (c >= 6 && c <= 9) return ["tuition", "development", "transport"];
+//     return ["exam", "tuition", "development"];
+//   };
+
+//   const fetchFee = async () => {
+//     if (!admissionNo.trim()) return toast.error("Please enter admission number");
+//     try {
+//       const res = await axios.get(`http://localhost:5000/api/fees/student/${admissionNo}`);
+//       if (res.data.success) {
+//         setData(res.data.data);
+//         toast.success("Record found!");
+//       } else toast.error("No record found");
+//     } catch (err) {
+//       console.error(err);
+//       toast.error("Failed to fetch record");
+//     }
+//   };
+
+//   const payNow = async () => {
+//     const amt = Number(amount);
+//     if (!amt || amt <= 0) return toast.error("Enter valid amount");
+
+//     const ok = await Swal.fire({
+//       title: `Pay ₹${amt}?`,
+//       text: "Proceed to payment?",
+//       icon: "question",
+//       showCancelButton: true,
+//       confirmButtonText: "Yes, Pay",
+//       cancelButtonText: "Cancel",
+//     });
+//     if (!ok.isConfirmed) return;
+
+//     try {
+//       const res = await axios.post("http://localhost:5000/api/fees/pay", {
+//         admissionNo,
+//         amount: amt,
+//         method: "parent",
+//       });
+
+//       if (res.data.success) {
+//         // refresh latest data for updated totals
+//         const refreshed = await axios.get(
+//           `http://localhost:5000/api/fees/student/${admissionNo}`
+//         );
+//         const dataNew = refreshed.data.data;
+//         const student = dataNew?.student || {};
+//         const items = dataNew?.fee?.items || {};
+//         const keys = getFeeKeysForClass(student.classApplied || student.class);
+//         const paid = dataNew?.payments?.reduce((s, t) => s + (t.amount || 0), 0) || 0;
+//         const total = keys.reduce((s, k) => s + (items[k]?.amount || 0), 0);
+//         const remaining = Math.max(0, total - paid);
+
+//         // show popup with updated info
+//         await Swal.fire({
+//           title: "✅ Payment Successful!",
+//           html: `
+//           <p><b>Paid:</b> ₹${paid.toLocaleString()}</p>
+//           <p><b>Remaining:</b> ₹${remaining.toLocaleString()}</p>
+//           `,
+//           icon: "success",
+//           confirmButtonText: "OK",
+//         });
+
+//         // after user clicks OK, reset page
+//         setAmount("");
+//         setAdmissionNo("");
+//         setData(null);
+//       } else {
+//         toast.error(res.data.error || "Payment failed");
+//       }
+//     } catch (err) {
+//       console.error(err);
+//       toast.error("Payment failed");
+//     }
+//   };
+
+
+//   const renderFeeTable = () => {
+//     if (!data) return null;
+//     const student = data.student;
+//     const items = data.fee?.items || {};
+//     const keys = getFeeKeysForClass(student.classApplied || student.class);
+//     const paid = data.payments?.reduce((s, t) => s + (t.amount || 0), 0) || 0;
+//     const total = keys.reduce((s, k) => s + (items[k]?.amount || 0), 0);
+//     const remaining = Math.max(0, total - paid);
+
+//     return (
+//       <div className="fee-card">
+//         <h3>{student.studentName} — Class {student.classApplied || student.class}</h3>
+//         <table className="fee-table">
+//           <thead>
+//             <tr>
+//               <th>Particular</th>
+//               <th>Amount (₹)</th>
+//             </tr>
+//           </thead>
+//           <tbody>
+//             {keys.map((k) => (
+//               <tr key={k}>
+//                 <td>{items[k]?.title || k}</td>
+//                 <td>₹{items[k]?.amount?.toLocaleString() || 0}</td>
+//               </tr>
+//             ))}
+//             <tr className="fee-total"><td><b>Total</b></td><td><b>₹{total.toLocaleString()}</b></td></tr>
+//             <tr><td>Paid</td><td>₹{paid.toLocaleString()}</td></tr>
+//             <tr><td>Remaining</td><td>₹{remaining.toLocaleString()}</td></tr>
+//           </tbody>
+//         </table>
+
+//         <div className="pay-section">
+//           <input
+//             type="number"
+//             value={amount}
+//             onChange={(e) => setAmount(e.target.value)}
+//             placeholder="Enter amount"
+//           />
+//           <button onClick={payNow}>Pay Now</button>
+//           <button
+//             className="secondary-btn"
+//             onClick={() => setAmount(remaining)}
+//           >
+//             Pay Full
+//           </button>
+//         </div>
+//       </div>
+//     );
+//   };
+
+//   return (
+//     <div className="fee-page">
+//       <Toaster />
+//       <div className="fee-container">
+//         <h2>💳 Pay School Fees</h2>
+//         <div className="search-box">
+//           <input
+//             type="text"
+//             placeholder="Enter Admission No."
+//             value={admissionNo}
+//             onChange={(e) => setAdmissionNo(e.target.value)}
+//           />
+//           <button onClick={fetchFee}>Search</button>
+//         </div>
+//         {renderFeeTable()}
+//       </div>
+//     </div>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
 // src/components/ParentFeePage.jsx
 import React, { useState } from "react";
 import axios from "axios";
@@ -489,20 +664,12 @@ import Swal from "sweetalert2";
 import toast, { Toaster } from "react-hot-toast";
 import "../styles/main.css";
 
-
 export default function ParentFeePage() {
   const [admissionNo, setAdmissionNo] = useState("");
   const [data, setData] = useState(null);
   const [amount, setAmount] = useState("");
 
-  // helper: class-based fee heads
-  const getFeeKeysForClass = (cls) => {
-    const c = Number(cls);
-    if (c >= 1 && c <= 5) return ["development", "transport"];
-    if (c >= 6 && c <= 9) return ["tuition", "development", "transport"];
-    return ["exam", "tuition", "development"];
-  };
-
+  // Fetch student fee details including admin updates and overrides
   const fetchFee = async () => {
     if (!admissionNo.trim()) return toast.error("Please enter admission number");
     try {
@@ -544,28 +711,26 @@ export default function ParentFeePage() {
           `http://localhost:5000/api/fees/student/${admissionNo}`
         );
         const dataNew = refreshed.data.data;
+        setData(dataNew);
+        setAmount("");
+
         const student = dataNew?.student || {};
         const items = dataNew?.fee?.items || {};
-        const keys = getFeeKeysForClass(student.classApplied || student.class);
         const paid = dataNew?.payments?.reduce((s, t) => s + (t.amount || 0), 0) || 0;
-        const total = keys.reduce((s, k) => s + (items[k]?.amount || 0), 0);
+        const total = Object.keys(items).reduce((s, k) => s + (items[k]?.amount || 0), 0);
         const remaining = Math.max(0, total - paid);
 
         // show popup with updated info
         await Swal.fire({
           title: "✅ Payment Successful!",
           html: `
-          <p><b>Paid:</b> ₹${paid.toLocaleString()}</p>
-          <p><b>Remaining:</b> ₹${remaining.toLocaleString()}</p>
+            <p><b>Paid:</b> ₹${paid.toLocaleString()}</p>
+            <p><b>Remaining:</b> ₹${remaining.toLocaleString()}</p>
           `,
           icon: "success",
           confirmButtonText: "OK",
         });
 
-        // after user clicks OK, reset page
-        setAmount("");
-        setAdmissionNo("");
-        setData(null);
       } else {
         toast.error(res.data.error || "Payment failed");
       }
@@ -575,12 +740,13 @@ export default function ParentFeePage() {
     }
   };
 
-
+  // Render dynamic fee table
   const renderFeeTable = () => {
     if (!data) return null;
+
     const student = data.student;
     const items = data.fee?.items || {};
-    const keys = getFeeKeysForClass(student.classApplied || student.class);
+    const keys = Object.keys(items); // dynamic keys from backend
     const paid = data.payments?.reduce((s, t) => s + (t.amount || 0), 0) || 0;
     const total = keys.reduce((s, k) => s + (items[k]?.amount || 0), 0);
     const remaining = Math.max(0, total - paid);
@@ -646,17 +812,6 @@ export default function ParentFeePage() {
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
