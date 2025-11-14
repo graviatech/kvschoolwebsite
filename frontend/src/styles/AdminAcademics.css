@@ -1,0 +1,49 @@
+.admin-academics-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 25px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.admin-academics-container h2 {
+  text-align: center;
+  color: #003366;
+  margin-bottom: 25px;
+}
+
+.editor-section {
+  margin-bottom: 25px;
+}
+
+.editor-section h3 {
+  color: #004080;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.editor-box {
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.save-btn {
+  background-color: #003366;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+.save-btn:hover {
+  background-color: #0055aa;
+}
+
+
+
+
+

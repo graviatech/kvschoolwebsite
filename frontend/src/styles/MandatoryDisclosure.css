@@ -1,0 +1,122 @@
+
+.mandatory-container {
+  background: #f9fbfd;
+  padding-bottom: 60px;
+  color: #222;
+} 
+
+
+.page-heading {
+  text-align: center;
+  font-size: 2rem;
+  color: #0078d4;
+  font-weight: 700;
+  margin: 40px 0 30px;
+  text-transform: uppercase;
+}
+
+
+
+.section {
+  margin: 0 auto 40px;
+  width: 90%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.section h3 {
+  background: #0b3a73;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.disclosure-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.disclosure-table th, .disclosure-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.disclosure-table th {
+  background: #eef4fb;
+  color: #0b3a73;
+  font-weight: 600;
+}
+
+.disclosure-table a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.disclosure-table a:hover {
+  text-decoration: underline;
+}
+
+.note {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  color: #444;
+}
+
+.small {
+  margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    height: 200px;
+  }
+
+  .page-heading {
+    font-size: 1.5rem;
+  }
+
+  .section {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .disclosure-table th, .disclosure-table td {
+    font-size: 0.85rem;
+    padding: 6px;
+  }
+}
+
+ 
+
+.banner-heading-wrapper {
+  text-align: center; /* centers everything inside */
+  margin-bottom: 30px; /* space below heading */
+}
+
+.page-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0078d4;
+  text-transform: uppercase;
+  margin: 20px 0 0; /* spacing above & below */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-heading {
+    font-size: 1.5rem;
+    margin: 15px 0 15px;
+  }
+}
+
+
+
+
+
+ 

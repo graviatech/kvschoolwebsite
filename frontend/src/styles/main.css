@@ -1,0 +1,4293 @@
+/* main.css - shared header/footer + layout basics */
+*{box-sizing:border-box}
+body{
+  font-family: Arial, Helvetica, sans-serif; 
+  margin:0; 
+  background:#f5f7fb; 
+  color:#222; 
+  /* display:flex; 
+  justify-content:center; */
+}
+
+
+.container{
+  width:100%; 
+  max-width:1200px; 
+  margin:20px; 
+  padding:0 12px;
+}
+
+
+.card{background:#fff; 
+  border:1px solid #e6eef9; 
+  padding:14px; 
+  border-radius:6px; 
+  box-shadow:0 3px 12px rgba(0,0,0,0.03);
+}
+
+/* HEADER */
+.site-header .topbar{
+  display:flex; 
+  justify-content:space-between; 
+  align-items:center; 
+  padding:12px 0; 
+  background:#fff;
+}
+
+
+.top-left{
+  display:flex; 
+  gap:14px; 
+  align-items:center;
+}
+
+
+.logo{
+  height:72px
+}
+
+
+.school-name{
+  font-weight:800; 
+  color:#0b3a73; 
+  font-size:20px
+}
+
+
+.school-sub{
+  font-size:13px; 
+  color:#333
+}
+
+/* socials */
+.top-right { 
+  display:flex; 
+  gap:10px; 
+  align-items:center; 
+}
+
+/* NAV */
+.main-nav{
+  background:#fff; 
+  border-top:1px solid #eee; 
+  border-bottom:1px solid #ddd;
+}
+
+
+.nav-inner{
+  display:flex; 
+  justify-content:center; 
+  gap:6px; 
+  padding:10px 6px; 
+  flex-wrap:wrap;
+}
+
+
+.nav-item{
+  padding:10px 18px; 
+  border:1px solid #ddd; 
+  text-decoration:none; 
+  color:#222
+}
+
+
+.nav-item.active{
+  background:#0b3a73; 
+  color:#fff; 
+  border-color:#0b3a73
+}
+
+/* two-col layouts */
+.two-col{
+  display:flex; 
+  gap:18px; 
+  margin-top:18px; 
+  flex-wrap:wrap
+}
+
+
+.left, .right{
+  flex:1 1 48%
+}
+
+.right{
+  max-width:360px
+}
+
+/* three-col */
+.three-col{
+  display:flex; 
+  gap:18px; 
+  margin-top:18px; 
+  flex-wrap:wrap
+}
+.three-col > .card{
+  flex:1 1 30%
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Footer Section ===== */
+.site-footer {
+  background: #072547;
+  color: #fff;
+  margin-top: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* --- Top Part --- */
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 20px;
+}
+
+.footer-top .col {
+  flex: 1 1 30%;
+  min-width: 250px;
+}
+
+.footer-top h4 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #1da1f2;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.footer-top ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-top ul li {
+  margin: 8px 0;
+}
+
+.footer-top ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-top ul li a:hover {
+  color: #1da1f2;
+}
+
+.footer-top p {
+  margin: 8px 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.footer-top a {
+  color: #1da1f2;
+  text-decoration: none;
+}
+
+.footer-top a:hover {
+  text-decoration: underline;
+}
+
+/* --- Bottom Bar --- */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 20px;
+  flex-wrap: wrap;
+}
+
+/* --- Social Icons --- */
+.social-icons a {
+  margin-right: 12px;
+  color: #fff;
+  font-size: 20px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+  transform: translateY(-2px);
+}
+
+.fa-whatsapp:hover {
+  color: #25d366;
+}
+.fa-youtube:hover {
+  color: #ff0000;
+}
+.fa-twitter:hover {
+  color: #1da1f2;
+}
+
+/* --- Copyright --- */
+.copyright {
+  font-size: 14px;
+  opacity: 0.9;
+  text-align: right;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .social-icons a {
+    margin: 0 8px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* ----- Phase1 additions ----- */
+
+/* Video banner */
+.video-banner { 
+  margin-top: 18px; 
+}
+
+.video-wrapper { 
+  position: relative; 
+  height: 360px; 
+  overflow: hidden; 
+  border: 3px solid #0b3a73; 
+  border-radius: 4px; 
+  background: #000; 
+}
+
+.banner-video { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  display: block; 
+}
+
+/* video controls */
+.vc-btn { 
+  position: absolute; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  background: rgba(0,0,0,0.35); 
+  color: #fff; 
+  border: none; 
+  width: 48px;        /* circle width */
+  height: 48px;       /* circle height */
+  display: flex;      /* flex to center icon */
+  justify-content: center; 
+  align-items: center; 
+  font-size: 24px;    /* arrow size */
+  cursor: pointer; 
+  border-radius: 50%; /* makes it a perfect circle */
+  z-index: 10;        /* above video */
+}
+
+.vc-btn.prev { 
+  left: 10px; 
+}
+
+.vc-btn.next { 
+  right: 10px; 
+}
+
+
+
+/* Only the icon, no white rectangle */
+.play-overlay {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: none;              /* remove white bg */
+  color: #fff;                   /* white icon */
+  font-size: 48px;               /* larger icon */
+  border: none;
+  cursor: pointer;
+  text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.video-index { 
+  position: absolute; 
+  right: 12px; 
+  bottom: 10px; 
+  background: rgba(0,0,0,0.45); 
+  padding: 6px 10px; 
+  color: #fff; 
+  border-radius: 4px; 
+  font-size: 13px; 
+}
+
+/* two-col */
+.two-col { 
+  display: flex; 
+  gap: 18px; 
+  margin-top: 18px; 
+  align-items: flex-start; 
+  flex-wrap: wrap; 
+}
+
+.left-col { 
+  flex: 0 0 62%; 
+}
+
+.right-col { 
+  flex: 0 0 36%; 
+}
+
+.activities .activity-slider { 
+  position: relative; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+.activity-slider img { 
+  width: 100%; 
+  max-height: 260px; 
+  object-fit: cover; 
+  border-radius: 4px; 
+}
+
+.act-arrow { 
+  position: absolute; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  background: rgba(0,0,0,0.25); 
+  color: #fff; 
+  border: none; 
+  font-size: 22px; 
+  padding: 8px 10px; 
+  cursor: pointer; 
+  border-radius: 6px; 
+}
+.act-arrow.left { 
+  left: 6px; 
+}
+
+.act-arrow.right { 
+  right: 6px; 
+}
+
+/* three-col */
+.three-col { 
+  display: flex; 
+  gap: 18px; 
+  margin-top: 18px; 
+  flex-wrap: wrap; 
+}
+.col { 
+  flex: 1 1 30%; 
+  min-width: 240px; 
+}
+
+/* calendar card */
+.calendar-card .cal-top { 
+  display: flex; 
+  gap: 8px; 
+  justify-content: flex-end; 
+}
+.calendar-card button { 
+  background: #f4f6fb; 
+  border: 1px solid #d6e3fb; 
+  padding: 6px 8px; 
+  border-radius: 4px; 
+  cursor: pointer; 
+}
+
+/* testimonials */
+.testimonials { 
+  margin-top: 18px; 
+}
+
+.test-row { 
+  display: flex; 
+  gap: 12px; 
+  margin-top: 12px; 
+  flex-wrap: wrap; 
+}
+.test-card { 
+  flex: 1 1 calc(25% - 12px); 
+  min-width: 180px; 
+}
+
+/* small button */
+.btn-small { 
+  display: inline-block; 
+  padding: 6px 10px; 
+  background: #0b3a73; 
+  color: #fff; 
+  border-radius: 4px; 
+  text-decoration: none; 
+}
+
+/* responsive tweaks */
+@media (max-width: 900px) {
+  .video-wrapper { height: 220px; }
+  .left-col, .right-col, .col { flex-basis: 100%; }
+  .test-card { flex-basis: 48%; }
+}
+
+
+
+
+
+
+
+
+
+
+/* ---------- Section under banner (Welcome + Activities) ---------- */
+
+.two-col {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+.left-col {
+  flex: 1 1 55%;
+  line-height: 1.7;
+}
+
+.right-col {
+  flex: 1 1 40%;
+}
+
+.right-col h3 {
+  color: #0b3a73;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Keep all activity cards same height regardless of image */
+.activities .activity-card {
+  width: 100%;
+  max-width: 100%;
+  height: 250px; /* fixed height */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.activities img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* prevents resizing */
+  border-radius: 10px;
+}
+
+/* ---------- 3-column Section (News / Calendar / Video) ---------- */
+
+.three-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+.col.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 360px; /* 👈 fixed height for equal cards */
+}
+
+/* Make sure inside content doesn't overflow */
+.news-card, .calendar-card, .video-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.news-card p {
+  margin: 6px 0;
+}
+
+.calendar-card img {
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Small action buttons in calendar */
+.calendar-card .cal-top {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.calendar-card .cal-top button {
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 4px 8px;
+  transition: all 0.3s;
+}
+.calendar-card .cal-top button:hover {
+  background: #ccc;
+}
+
+/* Buttons below video or image */
+.btn-small {
+  background: #0b3a73;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+.btn-small:hover {
+  background: #062957;
+}
+
+/* ---------- Responsive Adjustments ---------- */
+@media (max-width: 768px) {
+  .two-col {
+    flex-direction: column;
+  }
+  .col.card {
+    height: auto; /* allow expansion on mobile */
+  }
+}
+
+
+
+
+
+
+
+/* ---- Calendar image fix ---- */
+.calendar-card {
+  overflow: hidden;          /* keeps image inside the card */
+  border-radius: 6px;        /* match other cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.calendar-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 0;          /* remove double rounding */
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* WhatsApp icon in footer */
+.whatsapp-icon {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  background-color: #25D366;
+  color: white;
+  font-size: 28px;
+  border-radius: 50%;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  text-decoration: none;
+}
+
+.whatsapp-icon:hover {
+  transform: scale(1.1);
+  background-color: #1ebd5b;
+}
+
+
+
+
+
+
+
+/* ===========================
+   Admissions Page Styling
+   =========================== */
+
+.admissions-page {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 50px 8%;
+  background-color: #f9fafc;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ===== LEFT COLUMN ===== */
+.left-column {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #d9e1f2;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.left-column h2 {
+  font-size: 24px;
+  color: #003366;
+  border-bottom: 3px solid #003366;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 25px;
+}
+
+.info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.info-box p {
+  margin: 0;
+  padding: 15px;
+  border: 1px solid #c3d4f2;
+  border-radius: 10px;
+  background: #f3f8ff;
+  text-align: center;
+  font-weight: 600;
+  color: #003366;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.info-box p:hover {
+  background: #003366;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* ===== RIGHT COLUMN ===== */
+.right-column {
+  flex: 2.2;
+  background: #ffffff;
+  border: 1px solid #d9e1f2;
+  border-radius: 12px;
+  padding: 35px 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  line-height: 1.7;
+  color: #333;
+}
+
+.right-column h2 {
+  color: #003366;
+  font-size: 26px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #003366;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.right-column h3 {
+  color: #003366;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.right-column h4 {
+  color: #003366;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.right-column p {
+  margin-bottom: 15px;
+  font-size: 15.5px;
+  color: #333;
+}
+
+.right-column ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.right-column ul li {
+  margin-bottom: 8px;
+}
+
+/* ===== APPLY BUTTON ===== */
+.apply-button-container {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.apply-btn {
+  background-color: #003366;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.apply-btn:hover {
+  background-color: #0059b3;
+  transform: scale(1.03);
+}
+
+/* ===== FEE TABLE ===== */
+.fee-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.fee-table th,
+.fee-table td {
+  border: 1px solid #cfd9ec;
+  padding: 10px 12px;
+  text-align: center;
+}
+
+.fee-table th {
+  background-color: #003366;
+  color: #fff;
+  font-size: 15px;
+}
+
+.fee-table tr:nth-child(even) {
+  background-color: #f5f8ff;
+}
+
+/* ===== FORM SECTION ===== */
+.admission-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.admission-form input,
+.admission-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccd9f2;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admission-form input:focus,
+.admission-form textarea:focus {
+  border-color: #003366;
+  box-shadow: 0 0 5px rgba(0, 51, 102, 0.3);
+}
+
+.admission-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.admission-form button {
+  background-color: #003366;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.admission-form button:hover {
+  background-color: #0059b3;
+  transform: translateY(-2px);
+}
+
+.status {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #003366;
+}
+
+/* ===== HR SEPARATOR ===== */
+.right-column hr {
+  border: none;
+  height: 1px;
+  background-color: #d9e1f2;
+  margin: 30px 0;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 992px) {
+  .admissions-page {
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 5%;
+  }
+
+  .left-column {
+    position: static;
+  }
+
+  .apply-btn {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* LOGIN BUTTON STYLE */
+.login-btn {
+  background: #0b3a73;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.login-btn:hover {
+  background: #072547;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* main.css — unified layout for all content pages */
+
+/* Global reset & typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f9f9fb;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Page container */
+.main-container,
+.extra-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 8%;
+  gap: 40px;
+}
+
+.two-column {
+  display: flex;
+  width: 100%;
+  gap: 40px;
+}
+
+/* Left column (sidebar style) */
+.left-column {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  height: fit-content;
+}
+
+.left-column h2 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  border-bottom: 3px solid #0078d4;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.info-box, .points-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-box p,
+.points-box p {
+  background-color: #f3f6fa;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.info-box p:hover,
+.points-box p:hover {
+  background-color: #0078d4;
+  color: #fff;
+}
+
+/* Right column (main content) */
+.right-column {
+  flex: 3;
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.right-column h2 {
+  font-size: 1.6rem;
+  color: #0078d4;
+  margin-bottom: 20px;
+}
+
+.right-column h3 {
+  margin-top: 20px;
+  color: #005999;
+}
+
+.right-column p,
+.right-column li {
+  margin-bottom: 12px;
+}
+
+.right-column ul {
+  margin-left: 20px;
+}
+
+/* Links */
+a {
+  color: #0078d4;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+a:hover {
+  color: #004a88;
+  text-decoration: underline;
+}
+
+/* Tables (for admin dashboard) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+th {
+  background-color: #0078d4;
+  color: white;
+}
+tr:hover {
+  background-color: #f2f7ff;
+}
+
+/* Forms (login, admission) */
+form {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+form h2 {
+  color: #0078d4;
+  margin-bottom: 20px;
+}
+form input, form textarea, form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+form input:focus, form textarea:focus {
+  outline: none;
+  border-color: #0078d4;
+}
+form button {
+  background-color: #0078d4;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+form button:hover {
+  background-color: #005fa3;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+  .two-column, .main-container, .extra-page {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .left-column, .right-column {
+    width: 100%;
+  }
+}
+
+/* ============================= */
+/* 📸 Gallery Page Styling */
+/* ============================= */
+.gallery-page {
+  padding: 40px 0;
+  background: #f9f9fb;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers content horizontally */
+}
+
+/* Heading stays centered */
+.gallery-page h2 {
+  font-size: 2rem;
+  color: #0078d4;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #0078d4;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+/* Grid wrapper */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;                  /* centers each image in its cell */
+  justify-content: center;                /* centers the grid in container */
+  max-width: 1200px;                      /* optional, limits overall width */
+  margin: 0 auto;                         /* centers the grid on page */
+
+}
+
+/* Individual cards */
+.gallery-card {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Images */
+.gallery-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive columns */
+@media (max-width: 1200px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================== */
+/* 🎓 Admission Form + Admin Login Styling */
+/* ========================================== */
+
+form {
+  max-width: 600px;
+  margin: 50px auto;
+  background: #ffffff;
+  padding: 40px 50px;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+form h2 {
+  color: #0078d4;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  border-bottom: 3px solid #0078d4;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #0078d4;
+  box-shadow: 0 0 6px rgba(0, 120, 212, 0.3);
+  outline: none;
+}
+
+form label {
+  display: block;
+  text-align: left;
+  margin-top: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+form button {
+  background-color: #0078d4;
+  color: #fff;
+  padding: 12px 24px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+  background-color: #005fa3;
+  transform: scale(1.04);
+}
+
+form .status {
+  margin-top: 15px;
+  color: #0078d4;
+  font-weight: 500;
+}
+
+/* ========================================== */
+/* 🧍 Admin Dashboard Styling */
+/* ========================================== */
+
+.admin-dashboard {
+  padding: 40px 8%;
+  background: #f9f9fb;
+}
+
+.admin-dashboard h2 {
+  color: #0078d4;
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+}
+
+.admin-dashboard table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.admin-dashboard th,
+.admin-dashboard td {
+  padding: 14px 18px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.admin-dashboard th {
+  background-color: #0078d4;
+  color: white;
+  font-weight: 600;
+}
+
+.admin-dashboard tr:hover {
+  background-color: #f2f8ff;
+}
+
+.admin-dashboard img {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.admin-dashboard a {
+  color: #0078d4;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.admin-dashboard a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  form {
+    padding: 25px 20px;
+  }
+
+  .admin-dashboard table {
+    font-size: 14px;
+  }
+
+  .admin-dashboard th, .admin-dashboard td {
+    padding: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+.page-banner {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.banner-title {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .page-banner {
+    height: 200px;
+  }
+  .banner-title {
+    font-size: 1.4rem;
+  }
+}
+
+
+
+
+
+
+
+/* src/styles/layout.css */
+
+/* Parent Layout */
+.parent-layout {
+  display: flex;
+  min-height: 80vh;
+  background-color: #f5f6fa;
+}
+
+/* Sidebar */
+.parent-sidebar, .admin-sidebar {
+  width: 240px;
+  background-color: #072547; /* Dark blue sidebar */
+  color: #fff;
+  padding: 20px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.parent-sidebar h2,
+.admin-sidebar h2 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 6px;
+}
+
+.parent-sidebar nav a,
+.admin-sidebar nav a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 10px 0;
+  padding: 4px 0;
+  transition: 0.2s all;
+}
+
+.parent-sidebar nav a:hover,
+.admin-sidebar nav a:hover,
+.parent-sidebar nav a.active,
+.admin-sidebar nav a.active {
+  color: #ffd700; /* Gold highlight */
+  padding-left: 6px;
+}
+
+/* Content */
+.parent-content,
+.admin-content {
+  flex: 1;
+  padding: 30px;
+  background-color: #fff;
+  min-height: 80vh;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+  border-radius: 6px;
+}
+
+/* Admin Layout specific */
+.admin-layout {
+  display: flex;
+  min-height: 80vh;
+  background-color: #e9ecef;
+}
+
+/* Optional: Top header spacing for both */
+.site-header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-item.active {
+  font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+/* main.css - shared header/footer + layout basics */
+*{box-sizing:border-box}
+body{
+  font-family: Arial, Helvetica, sans-serif; 
+  margin:0; 
+  background:#f5f7fb; 
+  color:#222; 
+  /* display:flex; 
+  justify-content:center; */
+}
+
+
+.container{
+  width:100%; 
+  max-width:1200px; 
+  margin:20px; 
+  padding:0 12px;
+}
+
+
+.card{background:#fff; 
+  border:1px solid #e6eef9; 
+  padding:14px; 
+  border-radius:6px; 
+  box-shadow:0 3px 12px rgba(0,0,0,0.03);
+}
+
+/* HEADER */
+.site-header .topbar{
+  display:flex; 
+  justify-content:space-between; 
+  align-items:center; 
+  padding:12px 0; 
+  background:#fff;
+}
+
+
+.top-left{
+  display:flex; 
+  gap:14px; 
+  align-items:center;
+}
+
+
+.logo{
+  height:72px
+}
+
+
+.school-name{
+  font-weight:800; 
+  color:#0b3a73; 
+  font-size:20px
+}
+
+
+.school-sub{
+  font-size:13px; 
+  color:#333
+}
+
+/* socials */
+.top-right { 
+  display:flex; 
+  gap:10px; 
+  align-items:center; 
+}
+
+/* NAV */
+.main-nav{
+  background:#fff; 
+  border-top:1px solid #eee; 
+  border-bottom:1px solid #ddd;
+}
+
+
+.nav-inner{
+  display:flex; 
+  justify-content:center; 
+  gap:6px; 
+  padding:10px 6px; 
+  flex-wrap:wrap;
+}
+
+
+.nav-item{
+  padding:10px 18px; 
+  border:1px solid #ddd; 
+  text-decoration:none; 
+  color:#222
+}
+
+
+.nav-item.active{
+  background:#0b3a73; 
+  color:#fff; 
+  border-color:#0b3a73
+}
+
+/* two-col layouts */
+.two-col{
+  display:flex; 
+  gap:18px; 
+  margin-top:18px; 
+  flex-wrap:wrap
+}
+
+
+.left, .right{
+  flex:1 1 48%
+}
+
+.right{
+  max-width:360px
+}
+
+/* three-col */
+.three-col{
+  display:flex; 
+  gap:18px; 
+  margin-top:18px; 
+  flex-wrap:wrap
+}
+.three-col > .card{
+  flex:1 1 30%
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Footer Section ===== */
+.site-footer {
+  background: #072547;
+  color: #fff;
+  margin-top: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* --- Top Part --- */
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 20px;
+}
+
+.footer-top .col {
+  flex: 1 1 30%;
+  min-width: 250px;
+}
+
+.footer-top h4 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #1da1f2;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.footer-top ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-top ul li {
+  margin: 8px 0;
+}
+
+.footer-top ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-top ul li a:hover {
+  color: #1da1f2;
+}
+
+.footer-top p {
+  margin: 8px 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.footer-top a {
+  color: #1da1f2;
+  text-decoration: none;
+}
+
+.footer-top a:hover {
+  text-decoration: underline;
+}
+
+/* --- Bottom Bar --- */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 20px;
+  flex-wrap: wrap;
+}
+
+/* --- Social Icons --- */
+.social-icons a {
+  margin-right: 12px;
+  color: #fff;
+  font-size: 20px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+  transform: translateY(-2px);
+}
+
+.fa-whatsapp:hover {
+  color: #25d366;
+}
+.fa-youtube:hover {
+  color: #ff0000;
+}
+.fa-twitter:hover {
+  color: #1da1f2;
+}
+
+/* --- Copyright --- */
+.copyright {
+  font-size: 14px;
+  opacity: 0.9;
+  text-align: right;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .social-icons a {
+    margin: 0 8px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* ----- Phase1 additions ----- */
+
+/* Video banner */
+.video-banner { 
+  margin-top: 18px; 
+}
+
+.video-wrapper { 
+  position: relative; 
+  height: 360px; 
+  overflow: hidden; 
+  border: 3px solid #0b3a73; 
+  border-radius: 4px; 
+  background: #000; 
+}
+
+.banner-video { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  display: block; 
+}
+
+/* video controls */
+.vc-btn { 
+  position: absolute; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  background: rgba(0,0,0,0.35); 
+  color: #fff; 
+  border: none; 
+  font-size: 28px; 
+  padding: 10px 12px; 
+  cursor: pointer; 
+  border-radius: 6px; 
+}
+.vc-btn.prev { 
+  left: 10px; 
+}
+
+.vc-btn.next { 
+  right: 10px; 
+}
+
+/* Only the icon, no white rectangle */
+.play-overlay {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: none;              /* remove white bg */
+  color: #fff;                   /* white icon */
+  font-size: 48px;               /* larger icon */
+  border: none;
+  cursor: pointer;
+  text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.video-index { 
+  position: absolute; 
+  right: 12px; 
+  bottom: 10px; 
+  background: rgba(0,0,0,0.45); 
+  padding: 6px 10px; 
+  color: #fff; 
+  border-radius: 4px; 
+  font-size: 13px; 
+}
+
+/* two-col */
+.two-col { 
+  display: flex; 
+  gap: 18px; 
+  margin-top: 18px; 
+  align-items: flex-start; 
+  flex-wrap: wrap; 
+}
+
+.left-col { 
+  flex: 0 0 62%; 
+}
+
+.right-col { 
+  flex: 0 0 36%; 
+}
+
+.activities .activity-slider { 
+  position: relative; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+.activity-slider img { 
+  width: 100%; 
+  max-height: 260px; 
+  object-fit: cover; 
+  border-radius: 4px; 
+}
+
+.act-arrow { 
+  position: absolute; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  background: rgba(0,0,0,0.25); 
+  color: #fff; 
+  border: none; 
+  font-size: 22px; 
+  padding: 8px 10px; 
+  cursor: pointer; 
+  border-radius: 6px; 
+}
+.act-arrow.left { 
+  left: 6px; 
+}
+
+.act-arrow.right { 
+  right: 6px; 
+}
+
+/* three-col */
+.three-col { 
+  display: flex; 
+  gap: 18px; 
+  margin-top: 18px; 
+  flex-wrap: wrap; 
+}
+.col { 
+  flex: 1 1 30%; 
+  min-width: 240px; 
+}
+
+/* calendar card */
+.calendar-card .cal-top { 
+  display: flex; 
+  gap: 8px; 
+  justify-content: flex-end; 
+}
+.calendar-card button { 
+  background: #f4f6fb; 
+  border: 1px solid #d6e3fb; 
+  padding: 6px 8px; 
+  border-radius: 4px; 
+  cursor: pointer; 
+}
+
+/* testimonials */
+.testimonials { 
+  margin-top: 18px; 
+}
+
+.test-row { 
+  display: flex; 
+  gap: 12px; 
+  margin-top: 12px; 
+  flex-wrap: wrap; 
+}
+.test-card { 
+  flex: 1 1 calc(25% - 12px); 
+  min-width: 180px; 
+}
+
+/* small button */
+.btn-small { 
+  display: inline-block; 
+  padding: 6px 10px; 
+  background: #0b3a73; 
+  color: #fff; 
+  border-radius: 4px; 
+  text-decoration: none; 
+}
+
+/* responsive tweaks */
+@media (max-width: 900px) {
+  .video-wrapper { height: 220px; }
+  .left-col, .right-col, .col { flex-basis: 100%; }
+  .test-card { flex-basis: 48%; }
+}
+
+
+
+
+
+
+
+
+
+
+/* ---------- Section under banner (Welcome + Activities) ---------- */
+
+.two-col {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+.left-col {
+  flex: 1 1 55%;
+  line-height: 1.7;
+}
+
+.right-col {
+  flex: 1 1 40%;
+}
+
+.right-col h3 {
+  color: #0b3a73;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Keep all activity cards same height regardless of image */
+.activities .activity-card {
+  width: 100%;
+  max-width: 100%;
+  height: 250px; /* fixed height */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.activities img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* prevents resizing */
+  border-radius: 10px;
+}
+
+/* ---------- 3-column Section (News / Calendar / Video) ---------- */
+
+.three-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+.col.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 360px; /* 👈 fixed height for equal cards */
+}
+
+/* Make sure inside content doesn't overflow */
+.news-card, .calendar-card, .video-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.news-card p {
+  margin: 6px 0;
+}
+
+.calendar-card img {
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Small action buttons in calendar */
+.calendar-card .cal-top {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.calendar-card .cal-top button {
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 4px 8px;
+  transition: all 0.3s;
+}
+.calendar-card .cal-top button:hover {
+  background: #ccc;
+}
+
+/* Buttons below video or image */
+.btn-small {
+  background: #0b3a73;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+.btn-small:hover {
+  background: #062957;
+}
+
+/* ---------- Responsive Adjustments ---------- */
+@media (max-width: 768px) {
+  .two-col {
+    flex-direction: column;
+  }
+  .col.card {
+    height: auto; /* allow expansion on mobile */
+  }
+}
+
+
+
+
+
+
+
+/* ---- Calendar image fix ---- */
+.calendar-card {
+  overflow: hidden;          /* keeps image inside the card */
+  border-radius: 6px;        /* match other cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.calendar-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 0;          /* remove double rounding */
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* WhatsApp icon in footer */
+.whatsapp-icon {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  background-color: #25D366;
+  color: white;
+  font-size: 28px;
+  border-radius: 50%;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  text-decoration: none;
+}
+
+.whatsapp-icon:hover {
+  transform: scale(1.1);
+  background-color: #1ebd5b;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===========================
+   Admissions Page Styling
+   =========================== */
+
+.admissions-page {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 50px 8%;
+  background-color: #f9fafc;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ===== LEFT COLUMN ===== */
+.left-column {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #d9e1f2;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.left-column h2 {
+  font-size: 24px;
+  color: #003366;
+  border-bottom: 3px solid #003366;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 25px;
+}
+
+.info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.info-box p {
+  margin: 0;
+  padding: 15px;
+  border: 1px solid #c3d4f2;
+  border-radius: 10px;
+  background: #f3f8ff;
+  text-align: center;
+  font-weight: 600;
+  color: #003366;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.info-box p:hover {
+  background: #003366;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* ===== RIGHT COLUMN ===== */
+.right-column {
+  flex: 2.2;
+  background: #ffffff;
+  border: 1px solid #d9e1f2;
+  border-radius: 12px;
+  padding: 35px 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  line-height: 1.7;
+  color: #333;
+}
+
+.right-column h2 {
+  color: #003366;
+  font-size: 26px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #003366;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.right-column h3 {
+  color: #003366;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.right-column h4 {
+  color: #003366;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.right-column p {
+  margin-bottom: 15px;
+  font-size: 15.5px;
+  color: #333;
+}
+
+.right-column ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.right-column ul li {
+  margin-bottom: 8px;
+}
+
+/* ===== APPLY BUTTON ===== */
+.apply-button-container {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.apply-btn {
+  background-color: #003366;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.apply-btn:hover {
+  background-color: #0059b3;
+  transform: scale(1.03);
+}
+
+/* ===== FEE TABLE ===== */
+.fee-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.fee-table th,
+.fee-table td {
+  border: 1px solid #cfd9ec;
+  padding: 10px 12px;
+  text-align: center;
+}
+
+.fee-table th {
+  background-color: #003366;
+  color: #fff;
+  font-size: 15px;
+}
+
+.fee-table tr:nth-child(even) {
+  background-color: #f5f8ff;
+}
+
+/* ===== FORM SECTION ===== */
+.admission-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.admission-form input,
+.admission-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccd9f2;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admission-form input:focus,
+.admission-form textarea:focus {
+  border-color: #003366;
+  box-shadow: 0 0 5px rgba(0, 51, 102, 0.3);
+}
+
+.admission-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.admission-form button {
+  background-color: #003366;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.admission-form button:hover {
+  background-color: #0059b3;
+  transform: translateY(-2px);
+}
+
+.status {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #003366;
+}
+
+/* ===== HR SEPARATOR ===== */
+.right-column hr {
+  border: none;
+  height: 1px;
+  background-color: #d9e1f2;
+  margin: 30px 0;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 992px) {
+  .admissions-page {
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 5%;
+  }
+
+  .left-column {
+    position: static;
+  }
+
+  .apply-btn {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* LOGIN BUTTON STYLE */
+.login-btn {
+  background: #0b3a73;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.login-btn:hover {
+  background: #072547;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* main.css — unified layout for all content pages */
+
+/* Global reset & typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f9f9fb;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Page container */
+.main-container,
+.extra-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 8%;
+  gap: 40px;
+}
+
+.two-column {
+  display: flex;
+  width: 100%;
+  gap: 40px;
+}
+
+/* Left column (sidebar style) */
+.left-column {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  height: fit-content;
+}
+
+.left-column h2 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  border-bottom: 3px solid #0078d4;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.info-box, .points-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-box p,
+.points-box p {
+  background-color: #f3f6fa;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.info-box p:hover,
+.points-box p:hover {
+  background-color: #0078d4;
+  color: #fff;
+}
+
+/* Right column (main content) */
+.right-column {
+  flex: 3;
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.right-column h2 {
+  font-size: 1.6rem;
+  color: #0078d4;
+  margin-bottom: 20px;
+}
+
+.right-column h3 {
+  margin-top: 20px;
+  color: #005999;
+}
+
+.right-column p,
+.right-column li {
+  margin-bottom: 12px;
+}
+
+.right-column ul {
+  margin-left: 20px;
+}
+
+/* Links */
+a {
+  color: #0078d4;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+a:hover {
+  color: #004a88;
+  text-decoration: underline;
+}
+
+/* Tables (for admin dashboard) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+th {
+  background-color: #0078d4;
+  color: white;
+}
+tr:hover {
+  background-color: #f2f7ff;
+}
+
+/* Forms (login, admission) */
+form {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+form h2 {
+  color: #0078d4;
+  margin-bottom: 20px;
+}
+form input, form textarea, form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+form input:focus, form textarea:focus {
+  outline: none;
+  border-color: #0078d4;
+}
+form button {
+  background-color: #0078d4;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+form button:hover {
+  background-color: #005fa3;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+  .two-column, .main-container, .extra-page {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .left-column, .right-column {
+    width: 100%;
+  }
+}
+
+/* ============================= */
+/* 📸 Gallery Page Styling */
+/* ============================= */
+
+/* Admin side gallery styling */
+.admin-gallery-page h2 {
+  color: #003366;
+  margin-bottom: 20px;
+} */
+
+/* Drag & Drop */
+.upload-section {
+  border: 2px dashed #0078d4;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.upload-section.drag-over {
+  background: #e6f0ff;
+  border-color: #005bb5;
+}
+
+.upload-section input[type="file"] {
+  display: block;
+  margin: 10px auto 0;
+}
+
+/* Preview Grid */
+/* Preview Grid */
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.preview-card {
+  width: 100%;
+  height: 100px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9f9f9;
+}
+
+.preview-card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* ensures image fits inside box */
+}
+
+
+/* Upload Button */
+.upload-btn {
+  margin-bottom: 30px;
+  background: #0078d4;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.upload-btn:hover {
+  background: #005bb5;
+}
+
+
+.admin-gallery-page {
+  padding: 40px 8%;
+  background: #f9f9fb;
+  text-align: center;
+}
+
+.admin-gallery-page h2 {
+  font-size: 1.8rem;
+  color: #0b3a73;
+  margin-bottom: 20px;
+}
+
+.upload-section {
+  margin-bottom: 20px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.gallery-card {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  background: red;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.delete-btn:hover {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gallery-card img {
+    height: 140px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* ========================================== */
+/* 🎓 Admission Form + Admin Login Styling */
+/* ========================================== */
+
+form {
+  max-width: 600px;
+  margin: 50px auto;
+  background: #ffffff;
+  padding: 40px 50px;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+form h2 {
+  color: #0078d4;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  border-bottom: 3px solid #0078d4;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #0078d4;
+  box-shadow: 0 0 6px rgba(0, 120, 212, 0.3);
+  outline: none;
+}
+
+form label {
+  display: block;
+  text-align: left;
+  margin-top: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+form button {
+  background-color: #0078d4;
+  color: #fff;
+  padding: 12px 24px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+  background-color: #005fa3;
+  transform: scale(1.04);
+}
+
+form .status {
+  margin-top: 15px;
+  color: #0078d4;
+  font-weight: 500;
+}
+
+/* ========================================== */
+/* 🧍 Admin Dashboard Styling */
+/* ========================================== */
+
+.admin-dashboard {
+  padding: 40px 8%;
+  background: #f9f9fb;
+}
+
+.admin-dashboard h2 {
+  color: #003366;
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+}
+
+.admin-dashboard table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.admin-dashboard th,
+.admin-dashboard td {
+  padding: 14px 18px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.admin-dashboard th {
+  background-color: #0055aa;
+  color: white;
+  font-weight: 600;
+}
+
+.admin-dashboard tr:hover {
+  background-color: #f2f8ff;
+}
+
+.admin-dashboard img {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.admin-dashboard a {
+  color: #0078d4;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.admin-dashboard a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* Right fee editor with margin so it doesn’t overlap fixed sidebar */
+.fee-editor {
+  flex: 1;
+  margin-left: 270px; /* 250px sidebar + 20px gap */
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  form {
+    padding: 25px 20px;
+  }
+
+  .admin-dashboard table {
+    font-size: 14px;
+  }
+
+  .admin-dashboard th, .admin-dashboard td {
+    padding: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+.page-banner {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.banner-title {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .page-banner {
+    height: 200px;
+  }
+  .banner-title {
+    font-size: 1.4rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* src/styles/layout.css */
+
+/* Parent Layout */
+.parent-layout {
+  display: flex;
+  min-height: 80vh;
+  background-color: #f5f6fa;
+}
+
+/* Sidebar */
+.parent-sidebar, .admin-sidebar {
+  width: 240px;
+  background-color: #072547; /* Dark blue sidebar */
+  color: #fff;
+  padding: 20px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.parent-sidebar h2,
+.admin-sidebar h2 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 6px;
+}
+
+.parent-sidebar nav a,
+.admin-sidebar nav a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 10px 0;
+  padding: 4px 0;
+  transition: 0.2s all;
+}
+
+.parent-sidebar nav a:hover,
+.admin-sidebar nav a:hover,
+.parent-sidebar nav a.active,
+.admin-sidebar nav a.active {
+  color: #ffd700; /* Gold highlight */
+  padding-left: 6px;
+}
+
+/* Content */
+.parent-content,
+.admin-content {
+  flex: 1;
+  padding: 30px;
+  background-color: #fff;
+  min-height: 80vh;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+  border-radius: 6px;
+}
+
+/* Admin Layout specific */
+.admin-layout {
+  display: flex;
+  min-height: 80vh;
+  background-color: #e9ecef;
+}
+
+/* Optional: Top header spacing for both */
+.site-header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-item.active {
+  font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+/* Reduce spacing between list items in results section */
+.ql-editor .results-list ul {
+  margin: 0;           /* remove default ul margin */
+  padding-left: 20px;  /* optional: keep indentation */
+}
+
+.ql-editor .results-list li {
+  margin: 0.2em 0;     /* smaller gap between li items */
+  line-height: 1.4;  /* tighter line height */
+}
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+.fee-structure-container {
+  max-width: 900px;
+  width: 90%;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fee-card {
+  width: 100%;
+}
+
+/* Make the table wider and cleaner */
+.fee-table-container {
+  width: 100%;
+  overflow-x: auto; /* for small screens */
+  margin-top: 20px;
+}
+
+.fee-table {
+  width: 95%; /* slightly wider but not touching edges */
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+.fee-table th,
+.fee-table td {
+  border-bottom: 1px solid #ddd;
+  padding: 12px 16px;
+  text-align: left;
+}
+
+.fee-table th {
+  background-color: #003366;
+}
+
+.total-row td {
+  font-weight: bold;
+  border-top: 2px solid #000;
+  background-color: #fafafa;
+}
+
+
+
+.check-admission {
+  margin-top: 25px;
+}
+
+.check-admission input {
+  padding: 8px;
+  margin-right: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.pay-btn {
+  background: #1976d2;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.pay-btn:hover {
+  background: #125ba2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.admin-fee-grid {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.student-list {
+  width: 35%;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 10px;
+  max-height: 75vh;
+  overflow-y: auto;
+}
+
+.student-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.student-list li {
+  padding: 8px 10px;
+  margin-bottom: 4px;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+}
+
+.student-list li.selected {
+  background: #e6f0ff;
+  border-color: #3b82f6;
+}
+
+.fee-editor {
+  flex: 1;
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.fee-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.fee-table th,
+.fee-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Style only the Apply Now button */
+.admissions-page .right-column button {
+  background: #003366;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.admissions-page .right-column button:hover {
+  background: #0055aa;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.admissions-page .right-column button:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.admissions-page .right-column button:disabled {
+  background: #a5b4fc;
+  cursor: not-allowed;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.admin-extra-page {
+  padding: 20px;
+}
+
+.editor-section {
+  margin-bottom: 30px;
+}
+
+.save-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.save-btn:hover {
+  background-color: #45a049;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ParentFeePage - Search button styling */
+.search-btn {
+  background-color: #003366; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: #0055aa; 
+  transform: scale(1.05);
+}
+
+
+
+
+
+
+
+
+
+
+.extra-curr-save--btn{
+  background-color: #003366; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.extra-curr-save--btn:hover {
+  background-color: #0055aa;
+  transform: scale(1.05);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Admin Manage Fees Page */
+.admin-page {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+.admin-page h2 {
+  color: #003366;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.admin-page label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.admin-page input[type="text"],
+.admin-page input[type="number"] {
+  width: 100%;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.admin-page h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #003366;
+}
+
+.fee-item {
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  background-color: #f9f9f9;
+}
+
+.fee-item input {
+  margin-bottom: 10px;
+}
+
+.fee-item .ql-container {
+  min-height: 80px;
+  margin-bottom: 10px;
+}
+
+.admin-page button {
+  padding: 8px 18px;
+  background-color: #003366;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 10px;
+  transition: background-color 0.2s;
+}
+
+.admin-page button:hover {
+  background-color: #0055aa;
+}
+
+.admin-page hr {
+  margin: 25px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+.add-item-btn {
+  margin-bottom: 20px;
+  background-color: #28a745;
+}
+
+.add-item-btn:hover {
+  background-color: #1e7e34;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+}
+
+.delete-btn:hover {
+  background-color: #a71d2a;
+}
+
+
+
+
+
+
+
+
+
+
+
+.contact-editor-save-btn{
+  background-color: #003366;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-editor-save-btn:hover {
+  background-color: #0055aa;
+  transform: scale(1.05);
+}
+
+
+
+
+
+
+
+
+.ad-stu-fee-save-btn{
+  background-color: #003366;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ad-stu-fee-save-btn:hover {
+  background-color: #0055aa;
+  transform: scale(1.05);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.ad-dash-view-btn{
+  background-color: #003366;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ad-dash-view-btn:hover {
+  background-color: #0055aa;
+  transform: scale(1.05);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.payfee-btn {
+  background: #0b3a73;
+  color: white;
+  height: 2.6rem;
+  padding: 8px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.payfee-btn:hover {
+  background: #072547;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Payment Page: Force the whole page to center the card */
+.fee-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f7f9fb;
+  min-height: 100vh;
+  padding: 40px 20px;
+  width: 100%;
+}
+
+/* Card container */
+.fee-container {
+  background: #fff;
+  padding: 30px 35px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 700px;
+  text-align: center;
+  margin: auto; /* ensure centering if parent flex breaks */
+  position: relative;
+}
+
+/* Heading */
+.fee-container h2 {
+  color: #1e3a8a;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+/* Admission no search box */
+.search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.search-box input {
+  width: 250px;
+  padding: 10px 12px;
+  border: 2px solid #1e3a8a;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.search-box button {
+  background: #1e3a8a;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.search-box button:hover {
+  background: #2563eb;
+}
+
+/* Fee details card */
+.fee-card {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.fee-card h3 {
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.fee-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.fee-table th,
+.fee-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.fee-total td {
+  background: #f0f4ff;
+  font-weight: bold;
+}
+
+/* Payment input and buttons */
+.pay-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.pay-section input {
+  width: 150px;
+  padding: 8px;
+  border: 1.5px solid #1e3a8a;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.pay-section button {
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.pay-section .secondary-btn {
+  background: #64748b;
+}
+
+.pay-section button:hover {
+  background: #2563eb;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Admin Manage Home */
+.admin-manage-home {
+  padding: 30px;
+  background: #f7faff;
+  min-height: 100vh;
+  color: #0b3a73;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.admin-section {
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 14px;
+  margin-bottom: 25px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.section-header input[type="file"] {
+  cursor: pointer;
+}
+
+.video-preview-grid,
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.media-card {
+  position: relative;
+  width: 200px;
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.media-card img,
+.media-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.media-card button {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  border: none;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  font-size: 16px;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.empty-msg {
+  color: #777;
+  font-style: italic;
+}
+
+.btn-add {
+  background: #0b3a73;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+
+.btn-add:hover {
+  background: #062957;
+}
+
+.three-col-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.three-col-card {
+  background: #f4f6fb;
+  border-radius: 10px;
+  padding: 12px;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.three-col-card input,
+.three-col-card textarea {
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #c7d5f0;
+  resize: none;
+}
+
+.three-col-card button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.save-wrapper {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.save-btn {
+  background: #0b3a73;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.save-btn:hover {
+  background: #062957;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === Layout Base === */
+.home-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+
+
+/* === Welcome + Activities Section === */
+.welcome-activities-container {
+  display: flex;
+  gap: 40px;
+  margin: 40px 0;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.welcome-text {
+  flex: 0 0 58%;
+  min-width: 300px;
+  /* color: #003366; */
+}
+
+/* Activities slider */
+.activities-slider-wrapper {
+  flex: 0 0 38%;
+  text-align: center;
+}
+
+.activities-slider-single img {
+  width: 100%;
+  max-width: 320px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Banner video */
+.banner-section {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.banner-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Testimonials */
+.testimonials {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 25px;
+  justify-items: center;
+}
+
+.testimonial-video {
+  width: 100%;
+  max-width: 280px;
+  height: 160px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.three-column-section {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: stretch; /* ensures all columns same height */
+}
+
+.three-column-section .column {
+  flex: 1;
+  max-width: 33%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+
+.three-column-section .column h2{
+  color: #0078d4;
+}
+
+.view-calender-btn{
+  background-color: #003366;
+  color: white;
+  border-radius: 5px;
+}
+
+.view-calender-btn:hover{
+  background-color:#004a88;
+}
+
+.three-column-section .column-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+  flex: 1; /* forces columns to same height */
+}
+
+.three-column-section img {
+  width: 100%;
+  height: 200px;       /* limit calendar image height */
+  object-fit: cover;   /* crop image instead of stretching */
+  border-radius: 5px;
+}
+
+.three-column-section iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 5px;
+}
+
+@media (max-width: 900px) {
+  .three-column-section .column {
+    max-width: 100%; /* stack vertically on small screens */
+  }
+}
+
+
+
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .welcome-activities-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .activities-slider-single img {
+    max-width: 100%;
+    height: 160px;
+  }
+
+  .testimonial-video {
+    height: 130px;
+  }
+}
+
+
+
+
+/* Admin Manage Home Page 3-Column Section */
+
+.admin-section {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.admin-section h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.three-col-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* Inputs */
+.three-col-item input[type="text"],
+.three-col-item textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* Calendar Image Preview */
+.three-col-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 10px;
+  object-fit: cover;
+}
+
+/* Buttons inside each item */
+.three-col-item button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.2s;
+}
+
+.three-col-item button:hover {
+  background-color: #0056b3;
+}
+
+/* Make input areas same height visually */
+.three-col-item textarea {
+  min-height: 80px;
+}
+
+/* For video URL input */
+.three-col-item input[type="text"] {
+  min-height: 35px;
+}
+
+.save-wrapper button{
+  background: #0b3a73;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.save-wrapper button:hover {
+  background:#0055aa;
+}
+
+/* Responsive: stack items */
+@media (max-width: 900px) {
+  .three-col-item {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
