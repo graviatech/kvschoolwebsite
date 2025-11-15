@@ -16,10 +16,10 @@ const admissionSchema = new mongoose.Schema({
   feeOverrides: {
   type: Map,
   of: Number,
-  default: {},
+  default: () => new Map(),
 },
 
-});
+}, { timestamps: true });
 
 export default mongoose.model("Admission", admissionSchema);
 

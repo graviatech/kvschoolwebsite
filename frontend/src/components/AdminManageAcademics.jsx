@@ -1,6 +1,8 @@
 
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
+import api from "../api";  // relative path to api.js
+
 import ReactQuill from "react-quill";
 import toast, { Toaster } from "react-hot-toast";
 import "react-quill/dist/quill.snow.css";
@@ -30,7 +32,7 @@ export default function AdminManageAcademics() {
   ];
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/academics")
+    api.get("/api/academics")
       .then(res => {
         if (res.data) setFormData(res.data);
         toast.success("Academics data loaded!");
@@ -46,8 +48,8 @@ export default function AdminManageAcademics() {
   const handleSave = async () => {
     try {
       const token = localStorage.getItem("token");
-      await axios.put(
-        "http://localhost:5000/api/academics",
+      await api.put(
+        "/api/academics",
         formData,
         { headers: { Authorization: `Bearer ${token}` } }
       );

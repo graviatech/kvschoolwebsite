@@ -1,7 +1,9 @@
 
 
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
+import api from "../api";  // relative path to api.js
+
 import toast, { Toaster } from "react-hot-toast";
 
 
@@ -13,7 +15,7 @@ export default function AdminProfile() {
     const fetchProfile = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:5000/api/admin/profile", {
+        const res = await api.get("/api/admin/profile", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setProfile(res.data);
@@ -34,7 +36,7 @@ export default function AdminProfile() {
     e.preventDefault();
     try {
       const token = localStorage.getItem("token");
-      await axios.put("http://localhost:5000/api/admin/profile", form, {
+      await api.put("/api/admin/profile", form, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success("Profile updated successfully!");

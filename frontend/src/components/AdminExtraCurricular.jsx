@@ -1,7 +1,9 @@
 
 
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
+import api from "../api";  // relative path to api.js
+
 import toast, { Toaster } from "react-hot-toast";
 import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css';
@@ -13,7 +15,7 @@ export default function AdminExtraCurricular() {
   useEffect(() => {
     const fetchSections = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/extracurricular");
+        const res = await api.get("/api/extracurricular");
         setSections(res.data.data?.sections || {});
       } catch {
         toast.error("Failed to fetch content");
@@ -33,7 +35,7 @@ export default function AdminExtraCurricular() {
 
   const saveChanges = async () => {
     try {
-      await axios.put("http://localhost:5000/api/extracurricular", { sections });
+      await api.put("/api/extracurricular", { sections });
       toast.success("Sections updated successfully!");
     } catch {
       toast.error("Failed to save changes");

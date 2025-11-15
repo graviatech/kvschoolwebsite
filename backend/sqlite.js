@@ -18,6 +18,15 @@ export async function openDb() {
     )
   `);
 
+  // --- ADD PAGES TABLE ---
+  await db.exec(`
+    CREATE TABLE IF NOT EXISTS pages (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      title TEXT UNIQUE NOT NULL,
+      content TEXT NOT NULL
+    )
+  `);
+
   return db;
 }
 

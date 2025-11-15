@@ -3,7 +3,9 @@
 import React, { useEffect, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import axios from "axios";
+// import axios from "axios";
+import api from "../api";  // relative path to api.js
+
 import toast, { Toaster } from "react-hot-toast";
 
 export default function ContactEditor() {
@@ -11,7 +13,7 @@ export default function ContactEditor() {
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/contact-info")
+    api.get("/api/contact-info")
       .then(res => setContent(res.data?.content || ""))
       .catch(err => {
         console.error(err);
@@ -22,8 +24,8 @@ export default function ContactEditor() {
   const handleSave = async () => {
     setSaving(true);
     try {
-      await axios.put("http://localhost:5000/api/contact-info", { content });
-      toast.success("✅ Contact info updated successfully!");
+      await api.put("/api/contact-info", { content });
+      toast.success("Contact info updated successfully!");
     } catch (err) {
       console.error(err);
       toast.error("Failed to update contact info!");

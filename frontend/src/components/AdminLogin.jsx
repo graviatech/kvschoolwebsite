@@ -1,7 +1,9 @@
 
 
 import React, { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
+import api from "../api";  // relative path to api.js
+
 import toast, { Toaster } from "react-hot-toast";
 import '../styles/main.css';
 
@@ -13,7 +15,7 @@ export default function AdminLogin() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", form);
+      const res = await api.post("/api/auth/login", form);
       localStorage.setItem("token", res.data.token);
       toast.success("Login successful!");
       setTimeout(() => {

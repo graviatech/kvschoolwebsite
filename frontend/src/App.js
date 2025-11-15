@@ -35,6 +35,7 @@ import AdminEditSection from "./components/AdminEditSection";
 import AdminExtraCurricular from "./components/AdminExtraCurricular";
 import AdminGallery from "./components/AdminGallery";
 import AdminHomeManager from "./components/AdminHomeManager";
+import AdminFeeHistory from "./components/AdminFeeHistory";
 
 // === Fees Management ===
 import AdminManageFees from "./components/AdminManageFees";
@@ -85,7 +86,7 @@ export default function App() {
         <Route path="/admin/manage-extracurricular" element={<AdminExtraCurricular />} />
         <Route path="manage-gallery" element={<AdminGallery />} /> {/* NEW */}
         <Route path="manage-home" element={<AdminHomeManager />} />
-
+        <Route path="/admin/fee-history" element={<AdminFeeHistory />} />
       </Route>
     </Routes>
   );

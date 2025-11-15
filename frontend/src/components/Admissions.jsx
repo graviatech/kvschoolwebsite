@@ -1,7 +1,9 @@
 
 
 import React, { useRef, useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
+import api from "../api";  // relative path to api.js
+
 import Banner from "./Banner";
 import toast, { Toaster } from "react-hot-toast";
 import '../styles/main.css';
@@ -16,7 +18,7 @@ export default function Admissions() {
   useEffect(() => {
     const fetchFeeStructure = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/fees");
+        const res = await api.get("/api/fees");
         if (res.data.success) {
           setFeeStructure(res.data.data);
         } else {

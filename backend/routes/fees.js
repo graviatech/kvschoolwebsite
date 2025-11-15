@@ -94,12 +94,21 @@ router.post("/student", async (req, res) => {
 });
 
 
+
+
 // GET student detail + fee summary
 router.get("/student/:admissionNo", async (req, res) => {
   try {
     // const student = await Student.findOne({ admissionNo: req.params.admissionNo });
+    // const student = await Admission.findOne({ admissionNo: req.params.admissionNo });
+    // if (!student) return res.status(404).json({ success: false, error: "Student not found" });
     const student = await Admission.findOne({ admissionNo: req.params.admissionNo });
     if (!student) return res.status(404).json({ success: false, error: "Student not found" });
+
+    // FIX: ensure class exists
+    const studentData = student.toObject();
+    studentData.class = student.classApplied || student.class || "";
+
 
     const fs = await FeeStructure.findOne();
     const items = fs?.items || [];
@@ -121,7 +130,7 @@ router.get("/student/:admissionNo", async (req, res) => {
     res.json({
       success: true,
       data: {
-        student,
+        student: studentData,
         fee: { items: computed, total, paid, remaining },
         payments,
       }
@@ -194,12 +203,127 @@ router.get("/admin/students", async (req, res) => {
 });
 
 
+
+// ADMIN - Add a custom fee item for a specific student (student-specific)
+router.post("/admin/addItem", async (req, res) => {
+  try {
+    const { admissionNo, key, title, amount } = req.body;
+    if (!admissionNo || !key || !title || typeof amount !== "number") {
+      return res.status(400).json({ success: false, error: "All fields required (admissionNo,key,title,amount:number)" });
+    }
+
+    const student = await Admission.findOne({ admissionNo });
+    if (!student) return res.status(404).json({ success: false, error: "Student not found" });
+
+    // support both Map and plain object for feeOverrides
+    if (!student.feeOverrides) {
+      // initialize as Map-compatible plain object
+      student.feeOverrides = {};
+    }
+
+    // If stored as Map (mongoose Map), use set, else plain object
+    if (typeof student.feeOverrides.set === "function") {
+      student.feeOverrides.set(key, amount);
+    } else {
+      student.feeOverrides[key] = amount;
+    }
+    await student.save();
+
+    // ensure the global FeeStructure knows the title (only if not present)
+    let fs = await FeeStructure.findOne();
+    if (!fs) {
+      fs = await FeeStructure.create({ academicYear: "2025-26", items: [] });
+    }
+    if (!fs.items.some((it) => it.key === key)) {
+      fs.items.push({ key, title, amount, description: "" });
+      await fs.save();
+    }
+
+    res.json({ success: true, message: "Custom fee added for student", data: student });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+// ADMIN - Update a custom/default fee for a student (student-specific override)
+router.put("/admin/updateItem", async (req, res) => {
+  try {
+    const { admissionNo, key, title, amount } = req.body;
+    if (!admissionNo || !key) {
+      return res.status(400).json({ success: false, error: "admissionNo and key required" });
+    }
+
+    const student = await Admission.findOne({ admissionNo });
+    if (!student) return res.status(404).json({ success: false, error: "Student not found" });
+
+    if (!student.feeOverrides) student.feeOverrides = {};
+
+    if (typeof amount === "number") {
+      if (typeof student.feeOverrides.set === "function") student.feeOverrides.set(key, amount);
+      else student.feeOverrides[key] = amount;
+    }
+
+    // Save override
+    await student.save();
+
+    // Optionally update global title/amount (title only recommended)
+    const fs = await FeeStructure.findOne();
+    if (fs) {
+      const item = fs.items.find((it) => it.key === key);
+      if (item) {
+        if (title) item.title = title;
+        // Do NOT override global amount blindly unless you want it global; here we update amount only if provided explicitly:
+        if (typeof amount === "number") item.amount = amount;
+        await fs.save();
+      } else if (title) {
+        // If item doesn't exist globally, add it (title + amount)
+        fs.items.push({ key, title, amount: typeof amount === "number" ? amount : 0, description: "" });
+        await fs.save();
+      }
+    }
+
+    res.json({ success: true, message: "Updated student fee override", data: student });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+// ADMIN - Delete a custom fee override for a specific student
+// (This removes only the student-specific override. It does NOT delete from global FeeStructure catalog.)
+router.delete("/admin/deleteItem", async (req, res) => {
+  try {
+    const { admissionNo, key } = req.body;
+    if (!admissionNo || !key) {
+      return res.status(400).json({ success: false, error: "admissionNo and key required" });
+    }
+
+    const student = await Admission.findOne({ admissionNo });
+    if (!student) return res.status(404).json({ success: false, error: "Student not found" });
+
+    if (!student.feeOverrides) student.feeOverrides = {};
+
+    if (typeof student.feeOverrides.delete === "function") {
+      // if Map
+      student.feeOverrides.delete(key);
+    } else {
+      delete student.feeOverrides[key];
+    }
+
+    await student.save();
+
+    res.json({ success: true, message: "Student-specific fee override removed", data: student });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+
+
+
 export default router;
-
-
-
-
-
 
 
 

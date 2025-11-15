@@ -2,7 +2,9 @@
 
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
+import api from "../api";  // relative path to api.js
+
 import ReactQuill from "react-quill";
 import toast, { Toaster } from "react-hot-toast";
 import "react-quill/dist/quill.snow.css";
@@ -15,7 +17,7 @@ export default function AdminEditSection() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/academics")
+    api.get("/api/academics")
       .then(res => {
         if (res.data && res.data[sectionKey]) setContent(res.data[sectionKey]);
         setLoading(false);
@@ -31,8 +33,8 @@ export default function AdminEditSection() {
   const handleSave = async () => {
     try {
       const token = localStorage.getItem("token");
-      await axios.put(
-        "http://localhost:5000/api/academics",
+      await api.put(
+        "/api/academics",
         { [sectionKey]: content },
         { headers: { Authorization: `Bearer ${token}` } }
       );

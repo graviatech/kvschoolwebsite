@@ -1,7 +1,9 @@
 
 
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
+import api from "../api";  // relative path to api.js
+
 import toast, { Toaster } from "react-hot-toast";
 
 export default function ManageTeachers() {
@@ -11,7 +13,7 @@ export default function ManageTeachers() {
     const fetchTeachers = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:5000/api/admin/teachers", {
+        const res = await api.get("/api/admin/teachers", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setTeachers(res.data || []);

@@ -14,10 +14,10 @@ export default function AdminLayout() {
 
       <div className="admin-layout">
         <aside className="admin-sidebar">
-          <h2>Admin Panel</h2>
+          <h2 style={{color: "white"}}>Admin Panel</h2>
           <nav>
             <NavLink to="/admin/dashboard">Dashboard</NavLink>
-             <NavLink to="/admin/manage-home">Manage Home Page</NavLink>
+            <NavLink to="/admin/manage-home">Manage Home Page</NavLink>
             <NavLink to="/admin/manage-academics">Manage Academics</NavLink>
             <NavLink to="/admin/manage-extracurricular">Manage Extra Curricular</NavLink>
             <NavLink to="/admin/manage-gallery">Manage Gallery</NavLink>
@@ -27,6 +27,7 @@ export default function AdminLayout() {
             <NavLink to="/admin/contact">Manage Contact</NavLink>
             <NavLink to="/admin/manage-fees">Manage Fee Structure</NavLink>
             <NavLink to="/admin/students-fees">Students Fee Records</NavLink>
+            <NavLink to="/admin/fee-history">Fee Payment History</NavLink>
             <NavLink to="/">Go to Website</NavLink>
             
 

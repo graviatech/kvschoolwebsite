@@ -1,7 +1,9 @@
 
 
 import React, { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
+import api from "../api";  // relative path to api.js
+
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom"; // ✅ import for redirect
 import "../styles/main.css";
@@ -33,7 +35,7 @@ export default function AdmissionForm() {
     if (photo) data.append("photo", photo);
 
     try {
-      const res = await axios.post("http://localhost:5000/api/admissions", data);
+      const res = await api.post("/api/admissions", data);
 
       // ✅ Show toast with admission number
       toast.success(

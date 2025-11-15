@@ -1,6 +1,8 @@
 
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
+import api from "../api";  // relative path to api.js
+
 import toast, { Toaster } from "react-hot-toast";
 
 export default function ManageNotices() {
@@ -10,7 +12,7 @@ export default function ManageNotices() {
     const fetchNotices = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:5000/api/admin/notices", {
+        const res = await api.get("/api/admin/notices", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setNotices(res.data || []);

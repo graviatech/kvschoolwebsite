@@ -103,7 +103,9 @@
 
 
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
+import api from "../api";  // relative path to api.js
+
 import ReactQuill from "react-quill";
 import toast, { Toaster } from "react-hot-toast";
 import "react-quill/dist/quill.snow.css";
@@ -118,7 +120,7 @@ export default function AdminManageFees() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/fees")
+    api.get("/api/fees")
       .then(res => {
         if (res.data.success) setFs(res.data.data);
         setLoading(false);
@@ -155,7 +157,7 @@ export default function AdminManageFees() {
   const handleSave = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.put("http://localhost:5000/api/fees", fs, {
+      const res = await api.put("/api/fees", fs, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (res.data.success) toast.success("Fee structure saved");

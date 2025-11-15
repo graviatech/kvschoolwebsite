@@ -1,7 +1,9 @@
 
 
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
+import api from "../api";  // relative path to api.js
+
 import toast, { Toaster } from "react-hot-toast";
 import Banner from "./Banner";
 import "../styles/main.css";
@@ -10,7 +12,7 @@ export default function Contact() {
   const [content, setContent] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/contact-info")
+    api.get("/api/contact-info")
       .then(res => setContent(res.data?.content || ""))
       .catch(err => {
         console.error(err);

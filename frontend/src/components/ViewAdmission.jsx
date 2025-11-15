@@ -2,7 +2,9 @@
 
 
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
+import api from "../api";  // relative path to api.js
+
 import { useParams, Link } from "react-router-dom"; 
 import toast, { Toaster } from "react-hot-toast";
 import "../styles/main.css";
@@ -15,7 +17,7 @@ export default function ViewAdmission() {
     const fetchDetails = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get(`http://localhost:5000/api/admin/admissions/${id}`, {
+        const res = await api.get(`/api/admin/admissions/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         console.log("Photo path:", res.data.photo);

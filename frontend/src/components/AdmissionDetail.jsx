@@ -3,7 +3,9 @@
 
 import React, { useEffect, useState } from "react"; 
 import { useParams } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
+import api from "../api";  // relative path to api.js
+
 import toast, { Toaster } from "react-hot-toast";
 
 export default function AdmissionDetail() {
@@ -14,8 +16,8 @@ export default function AdmissionDetail() {
     const fetchAdmission = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get(
-          `http://localhost:5000/api/admin/admissions/${id}`,
+        const res = await api.get(
+          `/api/admin/admissions/${id}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setAdmission(res.data);

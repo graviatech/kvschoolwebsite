@@ -57,56 +57,125 @@
 
 
 
-// controllers/adminHomeController.js
-import fs from "fs";
-import path from "path";
+// // controllers/adminHomeController.js
+// import fs from "fs";
+// import path from "path";
+// import HomeContent from "../models/HomeContent.js";
+
+// export const saveHomeData = async (req, res) => {
+//   try {
+//     const fileUrl = req.file ? `/uploads/home/${req.file.filename}` : null;
+//     const { section, data } = req.body;
+
+//     console.log("🟢 Received home data:", req.body, fileUrl);
+
+//     // Load or create content
+//     let content = await HomeContent.findOne();
+//     if (!content) content = new HomeContent();
+
+//     // Handle file upload sections
+//     if (fileUrl && section) {
+//       if (!content[section]) content[section] = [];
+//       content[section].push(fileUrl);
+//     }
+
+//     // Handle text data updates
+//     if (data) {
+//       const parsedData = typeof data === "string" ? JSON.parse(data) : data;
+//       Object.assign(content, parsedData);
+//     }
+
+//     await content.save();
+
+//     res.json({
+//       success: true,
+//       message: "Home page data saved successfully ✅",
+//       content,
+//     });
+//   } catch (err) {
+//     console.error("❌ Save error:", err);
+//     res.status(500).json({
+//       success: false,
+//       message: "Server error while saving data",
+//       error: err.message,
+//     });
+//   }
+// };
+
+
+
+
+
+
 import HomeContent from "../models/HomeContent.js";
 
 export const saveHomeData = async (req, res) => {
   try {
     const fileUrl = req.file ? `/uploads/home/${req.file.filename}` : null;
-    const { section, data } = req.body;
+    const { section } = req.body;
+    let { data } = req.body;
 
     console.log("🟢 Received home data:", req.body, fileUrl);
 
-    // Load or create content
+    // Find or create document
     let content = await HomeContent.findOne();
     if (!content) content = new HomeContent();
 
-    // Handle file upload sections
+    // --------------------------
+    // 1️⃣ Handle file uploads
+    // --------------------------
     if (fileUrl && section) {
       if (!content[section]) content[section] = [];
       content[section].push(fileUrl);
     }
 
-    // Handle text data updates
+    // --------------------------
+    // 2️⃣ Handle encrypted TEXT updates
+    // --------------------------
     if (data) {
-      const parsedData = typeof data === "string" ? JSON.parse(data) : data;
-      Object.assign(content, parsedData);
+      try {
+        if (typeof data === "string") data = JSON.parse(data);
+
+        // // Merge all fields (encrypted text + arrays)
+        // content = Object.assign(content, data);
+        Object.keys(data).forEach((key) => {
+          if (Array.isArray(data[key])) {
+            // replace array
+            content[key] = data[key];
+          } else if (typeof data[key] === "object") {
+            // update nested objects (like threeColumnSection)
+            content[key] = { ...content[key], ...data[key] };
+          } else {
+            // update text fields (encrypted)
+            content[key] = data[key];
+          }
+        });
+
+      } catch (e) {
+        console.error("❌ JSON parsing failed:", e);
+      }
     }
 
+    // --------------------------
+    // 3️⃣ Save the merged document
+    // --------------------------
     await content.save();
 
     res.json({
       success: true,
-      message: "Home page data saved successfully ✅",
+      message: "Home page data saved successfully (encrypted) ✅",
       content,
     });
+
   } catch (err) {
     console.error("❌ Save error:", err);
     res.status(500).json({
       success: false,
-      message: "Server error while saving data",
+      message: "Server error while saving home data",
       error: err.message,
     });
   }
 };
-
-
-
-
-
-
 
 
 

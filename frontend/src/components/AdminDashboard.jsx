@@ -2,7 +2,9 @@
 
 
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
+import api from "../api";  // relative path to api.js
+
 
 export default function AdminDashboard() {
   const [admissions, setAdmissions] = useState([]);
@@ -10,7 +12,7 @@ export default function AdminDashboard() {
   useEffect(() => {
     const fetchData = async () => {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/admin/admissions", {
+      const res = await api.get("/api/admin/admissions", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setAdmissions(res.data);
