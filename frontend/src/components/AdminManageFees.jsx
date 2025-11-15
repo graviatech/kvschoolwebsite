@@ -123,6 +123,7 @@ export default function AdminManageFees() {
     api.get("/api/fees")
       .then(res => {
         if (res.data.success) setFs(res.data.data);
+        toast.success("Fee Structure loaded successfully!");
         setLoading(false);
       })
       .catch(err => {

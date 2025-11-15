@@ -31,6 +31,7 @@ export default function AdminStudentsFees() {
         "/api/fees/admin/students"
       );
       setStudents(res.data.data || []);
+      toast.success("Students Fee Record loaded successfully!");
     } catch (err) {
       console.error(err);
       toast.error("Failed to load students");

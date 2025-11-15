@@ -17,6 +17,7 @@ export default function AdminFeeHistory() {
       const res = await api.get("/api/fees/transactions");
       if (res.data.success) {
         setTransactions(res.data.data);
+        toast.success("Fee Payment History loaded successfully!");
       } else {
         toast.error("Failed to fetch transactions");
       }

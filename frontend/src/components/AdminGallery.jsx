@@ -80,7 +80,7 @@
 import React, { useState, useEffect } from "react";
 import Banner from "./Banner";
 import api from "../api";  // relative path to api.js
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import Swal from "sweetalert2";
 
 import "../styles/main.css";
@@ -92,7 +92,10 @@ export default function AdminGallery() {
   useEffect(() => {
     api
       .get("/api/gallery")
-      .then((res) => setImages(res.data))
+      .then((res) => {
+        setImages(res.data);
+        toast.success("Gallery loaded successfully!");
+      })
       .catch((err) => {
         console.error(err);
         toast.error("Failed to load gallery");
@@ -147,7 +150,8 @@ export default function AdminGallery() {
 
   return (
     <>
-      <Banner />
+      <Toaster />    
+      {/* <Banner /> */}
       <div className="admin-gallery-page">
         <h2>Manage Gallery</h2>
 

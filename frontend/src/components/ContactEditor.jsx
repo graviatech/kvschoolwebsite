@@ -14,7 +14,10 @@ export default function ContactEditor() {
 
   useEffect(() => {
     api.get("/api/contact-info")
-      .then(res => setContent(res.data?.content || ""))
+      .then(res => {
+        setContent(res.data?.content || "")
+        toast.success("Contact info loaded successfully!");
+      })
       .catch(err => {
         console.error(err);
         toast.error("Failed to load contact info!");

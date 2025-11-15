@@ -21,6 +21,7 @@ export default function Admissions() {
         const res = await api.get("/api/fees");
         if (res.data.success) {
           setFeeStructure(res.data.data);
+          toast.success("Admissions data loaded successfully!");
         } else {
           toast.error("Failed to load fee structure");
         }
@@ -32,21 +33,32 @@ export default function Admissions() {
     fetchFeeStructure();
   }, []);
 
-  const scrollToSection = (ref) => {
-    ref.current.scrollIntoView({ behavior: "smooth" });
+  // const scrollToSection = (ref) => {
+  //   ref.current.scrollIntoView({ behavior: "smooth" });
+  // };
+
+  const scrollToSection = (ref, sectionName) => {
+    if (!ref.current) return;
+
+    // Scroll smoothly
+    ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    // Show toast popup
+    toast(`Scrolling to ${sectionName}`);
   };
+  
 
   return (
     <>
-      <Toaster />
+      <Toaster position="top-right" reverseOrder={false} />
       <Banner /> 
       <div className="admissions-page">
         <div className="left-column">
           <h2>Admissions</h2>
           <div className="info-box">
-            <p onClick={() => scrollToSection(formRef)}>Application Form</p>
-            <p onClick={() => scrollToSection(onlineRef)}>Apply Online</p>
-            <p onClick={() => scrollToSection(feeRef)}>Fee Structure</p>
+            <p onClick={() => scrollToSection(formRef, "Application Form")} style={{ cursor: "pointer" }}>Application Form</p>
+            <p onClick={() => scrollToSection(onlineRef, "Apply Online")} style={{ cursor: "pointer" }}>Apply Online</p>
+            <p onClick={() => scrollToSection(feeRef, "Fee Structure")} style={{ cursor: "pointer" }}>Fee Structure</p>
           </div>
         </div>
 
