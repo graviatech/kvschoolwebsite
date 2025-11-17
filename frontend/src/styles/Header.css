@@ -1,7 +1,3 @@
-/* ================================
-   HEADER TOP BAR
-================================ */
-
 .site-header {
   width: 100%;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
@@ -12,7 +8,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* Top Bar */
+
 .topbar {
   display: flex;
   align-items: center;
@@ -21,7 +17,7 @@
   background: #ffffff;
 }
 
-/* Left Section: logo + school title */
+
 .top-left {
   display: flex;
   align-items: center;
@@ -50,7 +46,7 @@
   color: #555;
 }
 
-/* Right Section: Buttons */
+
 .top-right {
   display: flex;
   align-items: center;
@@ -88,9 +84,7 @@
   color: white;
 }
 
-/* ================================
-   NAVIGATION BAR
-================================ */
+
 
 .main-nav {
   background: linear-gradient(90deg, #003566, #00509e);
@@ -126,9 +120,7 @@
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-/* ================================
-   RESPONSIVE DESIGN
-================================ */
+
 
 @media (max-width: 768px) {
   .topbar {

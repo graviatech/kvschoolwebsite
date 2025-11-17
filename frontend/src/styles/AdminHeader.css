@@ -1,4 +1,3 @@
-/* MAIN HEADER WRAPPER */
 .site-header {
   background: #003366;
   padding: 12px 0;
@@ -9,7 +8,7 @@
   z-index: 1000;
 }
 
-/* FLEX TOP BAR */
+
 .topbar {
   max-width: 1300px;
   margin: auto;
@@ -20,14 +19,14 @@
   justify-content: space-between;
 }
 
-/* LEFT SECTION: LOGO + SCHOOL NAME */
+
 .top-left {
   display: flex;
   align-items: center;
   gap: 18px;
 }
 
-/* Logo Image */
+
 .logo {
   width: 65px;
   height: 65px;
@@ -38,7 +37,7 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
-/* SCHOOL NAME & META */
+
 .school-meta {
   display: flex;
   flex-direction: column;
@@ -57,7 +56,7 @@
   opacity: 0.9;
 }
 
-/* GO TO WEBSITE BUTTON */
+
 .login-btn {
   background: #ffffff;
   color: #003366;
@@ -75,7 +74,7 @@
   transform: translateY(-2px);
 }
 
-/* RESPONSIVE */
+
 @media (max-width: 768px) {
   .topbar {
     flex-direction: column;

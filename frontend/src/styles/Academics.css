@@ -1,14 +1,10 @@
-/* ============================
-   ACADEMICS PAGE – SIDE MENU LAYOUT
-============================ */
-
 .main-container {
   padding: 40px 20px;
   background: #f4f8ff;
   font-family: "Poppins", sans-serif;
 }
 
-/* GRID LAYOUT (LEFT MENU + RIGHT PAGE) */
+
 .two-column {
   display: grid;
   grid-template-columns: 260px 1fr;
@@ -17,9 +13,7 @@
   margin: auto;
 }
 
-/* ============================
-     LEFT SIDE - MENU
-============================ */
+
 
 .left-column {
   background: #ffffff;
@@ -56,16 +50,14 @@
   transform: translateX(6px);
 }
 
-/* ACTIVE POINT ON LEFT (OPTIONAL IF YOU WANT JS-BASED ACTIVE TOO) */
+
 .points-box p.active {
   background: #cde0ff;
   border-left: 6px solid #1a73e8;
   font-weight: 600;
 }
 
-/* ============================
-    RIGHT SIDE - PAGE CONTENT
-============================ */
+
 
 .right-column {
   padding-right: 10px;
@@ -93,7 +85,7 @@
   font-weight: 600;
 }
 
-/* QUILL CONTENT */
+
 .results-list {
   font-size: 16px;
   color: #333;
@@ -109,14 +101,11 @@
   margin-bottom: 10px;
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* ============================
-   RESPONSIVE
-============================ */
+
 
 @media (max-width: 992px) {
   .two-column {

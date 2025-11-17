@@ -95,8 +95,8 @@
  
 
 .banner-heading-wrapper {
-  text-align: center; /* centers everything inside */
-  margin-bottom: 30px; /* space below heading */
+  text-align: center; 
+  margin-bottom: 30px; 
 }
 
 .page-heading {
@@ -104,10 +104,10 @@
   font-weight: 700;
   color: #0078d4;
   text-transform: uppercase;
-  margin: 20px 0 0; /* spacing above & below */
+  margin: 20px 0 0; 
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .page-heading {
     font-size: 1.5rem;

@@ -1,7 +1,3 @@
-/* -------------------------------------
-   ADMIN EXTRA CURRICULAR EDIT PAGE
---------------------------------------*/
-
 .admin-extra-page {
   max-width: 1000px;
   margin: 40px auto;
@@ -12,7 +8,7 @@
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
 }
 
-/* Page Heading */
+
 .admin-extra-page h2 {
   text-align: center;
   font-size: 28px;
@@ -21,7 +17,7 @@
   margin-bottom: 25px;
 }
 
-/* Section Title */
+
 .admin-extra-page h3 {
   font-size: 20px;
   color: #003366;
@@ -29,7 +25,7 @@
   font-weight: 600;
 }
 
-/* Quill Editor Styling */
+
 .ql-container {
   height: 250px !important;
   border-radius: 10px;
@@ -40,7 +36,7 @@
   border-radius: 10px 10px 0 0;
 }
 
-/* Save Button */
+
 .extra-curr-save--btn {
   background: #003366;
   color: #fff;
@@ -68,7 +64,7 @@
   cursor: not-allowed;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .admin-extra-page {
     padding: 20px;

@@ -1,6 +1,3 @@
-/* ------------------------------ */
-/*   ADMIN LAYOUT MAIN WRAPPER    */
-/* ------------------------------ */
 .admin-layout {
   display: flex;
   min-height: calc(100vh - 140px);
@@ -11,9 +8,7 @@
 
 
 
-/* ------------------------------ */
-/*          SIDEBAR               */
-/* ------------------------------ */
+
 .admin-sidebar {
   width: 260px;
   background: linear-gradient(180deg, #003366, #004080);
@@ -35,9 +30,6 @@
 
 
 
-/* ------------------------------ */
-/*          SIDEBAR LINKS         */
-/* ------------------------------ */
 .admin-sidebar nav {
   display: flex;
   flex-direction: column;
@@ -71,9 +63,7 @@
 
 
 
-/* ------------------------------ */
-/*           MAIN CONTENT         */
-/* ------------------------------ */
+
 .admin-content {
   flex: 1;
   background: white;
@@ -91,9 +81,7 @@
 
 
 
-/* ------------------------------ */
-/*        RESPONSIVE DESIGN       */
-/* ------------------------------ */
+
 @media (max-width: 900px) {
   .admin-layout {
     flex-direction: column;
