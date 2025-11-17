@@ -6,7 +6,7 @@ import api from "../api";  // relative path to api.js
 
 import toast, { Toaster } from "react-hot-toast";
 import Banner from "./Banner";
-import "../styles/main.css";
+import "../styles/Contact.css";
 
 export default function Contact() {
   const [content, setContent] = useState("");

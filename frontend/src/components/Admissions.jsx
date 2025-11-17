@@ -6,7 +6,7 @@ import api from "../api";  // relative path to api.js
 
 import Banner from "./Banner";
 import toast, { Toaster } from "react-hot-toast";
-import '../styles/main.css';
+import '../styles/Admission.css';
 
 export default function Admissions() {
   const formRef = useRef(null);

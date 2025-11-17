@@ -1,46 +1,131 @@
-.academics-page {
-  max-width: 900px;
-  margin: 30px auto;
-  background: #fff;
-  border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+/* ============================
+   ACADEMICS PAGE – SIDE MENU LAYOUT
+============================ */
+
+.main-container {
+  padding: 40px 20px;
+  background: #f4f8ff;
+  font-family: "Poppins", sans-serif;
 }
 
-.academics-title {
-  text-align: center;
-  color: #003366;
-  font-size: 32px;
-  margin-bottom: 30px;
-  border-bottom: 3px solid #003366;
-  padding-bottom: 10px;
+/* GRID LAYOUT (LEFT MENU + RIGHT PAGE) */
+.two-column {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 30px;
+  max-width: 1300px;
+  margin: auto;
 }
 
-.academics-section {
-  margin-bottom: 40px;
+/* ============================
+     LEFT SIDE - MENU
+============================ */
+
+.left-column {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 120px;
+  height: fit-content;
+  border-left: 5px solid #1a73e8;
 }
 
-.section-title {
+.left-column h2 {
   font-size: 22px;
-  color: #004080;
-  margin-bottom: 12px;
-  border-left: 4px solid #004080;
-  padding-left: 10px;
+  color: #003566;
+  margin-bottom: 15px;
+  font-weight: 600;
 }
 
-.academics-content {
-  font-family: "Segoe UI", sans-serif;
+.points-box p {
+  margin: 12px 0;
+  padding: 12px 14px;
+  background: #eaf2ff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+  border-left: 4px solid #4ea8de;
+}
+
+.points-box p:hover {
+  background: #d6e7ff;
+  color: #003566;
+  transform: translateX(6px);
+}
+
+/* ACTIVE POINT ON LEFT (OPTIONAL IF YOU WANT JS-BASED ACTIVE TOO) */
+.points-box p.active {
+  background: #cde0ff;
+  border-left: 6px solid #1a73e8;
+  font-weight: 600;
+}
+
+/* ============================
+    RIGHT SIDE - PAGE CONTENT
+============================ */
+
+.right-column {
+  padding-right: 10px;
+}
+
+.right-column > div {
+  background: white;
+  padding: 30px;
+  margin-bottom: 35px;
+  border-radius: 18px;
+  box-shadow: 0 0 18px rgba(0,0,0,0.08);
+  border-left: 6px solid #1a73e8;
+  transition: 0.3s ease;
+}
+
+.right-column > div:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 22px rgba(0,0,0,0.12);
+}
+
+.right-column h2 {
+  font-size: 24px;
+  color: #003566;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* QUILL CONTENT */
+.results-list {
   font-size: 16px;
   color: #333;
   line-height: 1.7;
 }
 
-.academics-content p {
-  margin-bottom: 12px;
+.results-list ul {
+  padding-left: 20px;
 }
 
-.academics-content h3 {
-  color: #003366;
-  margin: 20px 0 10px;
+.results-list p,
+.results-list li {
+  margin-bottom: 10px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+
+@media (max-width: 992px) {
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+
+  .left-column {
+    position: relative;
+    top: 0;
+  }
 }
 

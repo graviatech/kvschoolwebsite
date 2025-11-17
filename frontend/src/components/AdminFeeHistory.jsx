@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import api from "../api";  // relative path to api.js
 
 import toast, { Toaster } from "react-hot-toast";
-import "../styles/main.css";
+import "../styles/AdminFeeHistory.css";
 
 export default function AdminFeeHistory() {
   const [transactions, setTransactions] = useState([]);

@@ -3,7 +3,7 @@
 // src/components/AdminHeader.jsx
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/main.css";
+import "../styles/AdminHeader.css";
 
 export default function AdminHeader() {
   return (

@@ -73,7 +73,7 @@ import api from "../api";
 import toast, { Toaster } from "react-hot-toast";
 import Swal from "sweetalert2";
 
-import "../styles/main.css";
+import "../styles/Academics.css";
 
 export default function Academics() {
   const [data, setData] = useState({});

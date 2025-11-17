@@ -61,6 +61,7 @@ import React, { useEffect, useState } from "react";
 import api from "../api";  // relative path to api.js
 import Swal from "sweetalert2";
 import toast, { Toaster } from "react-hot-toast";
+import "../styles/AdminDashboard.css";
 
 export default function AdminDashboard() {
   const [admissions, setAdmissions] = useState([]);

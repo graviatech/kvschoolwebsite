@@ -6,7 +6,7 @@ import api from "../api";  // relative path to api.js
 
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom"; // ✅ import for redirect
-import "../styles/main.css";
+import "../styles/AdmissionForm.css";
 
 export default function AdmissionForm() {
   const [form, setForm] = useState({});

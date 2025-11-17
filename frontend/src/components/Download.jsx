@@ -1,7 +1,7 @@
 
 import React from "react";
 import Banner from "./Banner"; // ✅ added
-import "../styles/main.css";
+import "../styles/Download.css";
 
 const Download = () => {
   return (

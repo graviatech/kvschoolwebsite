@@ -5,7 +5,7 @@ import React from "react";
 import { Outlet, NavLink } from "react-router-dom";
 import AdminHeader from "./AdminHeader";
 import Footer from "./Footer";
-import "../styles/main.css";
+import "../styles/AdminLayout.css";
 
 export default function AdminLayout() {
   return (
@@ -23,7 +23,7 @@ export default function AdminLayout() {
             <NavLink to="/admin/manage-gallery">Manage Gallery</NavLink>
             <NavLink to="/admin/profile">Profile</NavLink>
             <NavLink to="/admin/teachers">Manage Teachers</NavLink>
-            <NavLink to="/admin/notices">Notices</NavLink>
+            <NavLink to="/admin/notices">Manage Notices</NavLink>
             <NavLink to="/admin/contact">Manage Contact</NavLink>
             <NavLink to="/admin/manage-fees">Manage Fee Structure</NavLink>
             <NavLink to="/admin/students-fees">Students Fee Records</NavLink>

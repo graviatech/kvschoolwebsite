@@ -1,0 +1,149 @@
+/* Container */
+.admin-fees-page {
+  padding: 25px;
+  background: #f4f8fc;
+  min-height: 100vh;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.admin-fees-page h2 {
+  font-weight: 700;
+  text-align: left;
+}
+
+/* GRID LAYOUT */
+.admin-fee-grid {
+  display: grid;
+  grid-template-columns: 28% 72%;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+/* ------------------------------
+   STUDENT LIST
+--------------------------------*/
+.student-list {
+  background: #fff;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.09);
+  border-left: 5px solid #003366;
+  max-height: 75vh;
+  overflow-y: auto;
+}
+
+.student-list h3 {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.student-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.student-list li {
+  background: #eef4ff;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  border-left: 4px solid transparent;
+}
+
+.student-list li:hover {
+  background: #dbe8ff;
+  transform: translateX(3px);
+}
+
+.student-list li.selected {
+  background: #c7dbff;
+  border-left: 4px solid #003366;
+  font-weight: 600;
+}
+
+/* ------------------------------
+   FEE EDITOR
+--------------------------------*/
+.fee-editor {
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  min-height: 75vh;
+}
+
+/* Table */
+.fee-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.fee-table th, .fee-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #dce4f0;
+  text-align: left;
+  font-size: 15px;
+}
+
+.fee-table th {
+  background: #003366;
+  color: white;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.fee-table input {
+  width: 120px;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #b9c7dd;
+  font-size: 15px;
+  outline: none;
+}
+
+.fee-table input:focus {
+  border-color: #003366;
+}
+
+/* Total row styling */
+.fee-total td {
+  background: #f0f6ff;
+  font-weight: 700;
+}
+
+/* Save Button */
+.ad-stu-fee-save-btn {
+  margin-top: 18px;
+  padding: 12px 26px;
+  background: #003366;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.ad-stu-fee-save-btn:hover {
+  background: #00264d;
+  transform: translateY(-2px);
+}
+
+/* Scrollbar Styling */
+.student-list::-webkit-scrollbar {
+  width: 7px;
+}
+
+.student-list::-webkit-scrollbar-thumb {
+  background: #003366;
+  border-radius: 10px;
+}
+
+.student-list::-webkit-scrollbar-track {
+  background: #e7eef8;
+}
+

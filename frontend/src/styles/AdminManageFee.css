@@ -1,0 +1,161 @@
+/* ============================================================
+   ADMIN MANAGE FEE STRUCTURE — Modern Blue-White Theme
+   ============================================================ */
+
+.admin-fees-container {
+  max-width: 900px;
+  margin: 30px auto;
+  background: #ffffff;
+  padding: 30px;
+  border: 1px solid #dce6f5;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+}
+
+.admin-fees-container h2 {
+  margin-bottom: 18px;
+  color: #0b3a73;
+  text-align: center;
+  letter-spacing: 0.4px;
+}
+
+/* ---------------- FORM GROUP ---------------- */
+.form-group {
+  margin-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #0b3a73;
+  margin-bottom: 7px;
+  font-size: 15px;
+}
+
+.form-group input {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #cddbef;
+  font-size: 15px;
+  background: #f7faff;
+  transition: 0.25s ease;
+}
+
+.form-group input:focus {
+  border-color: #0b3a73;
+  background: #ffffff;
+  box-shadow: 0 0 6px rgba(11, 58, 115, 0.2);
+}
+
+/* ---------------- FEE ITEMS SECTION ---------------- */
+h3 {
+  margin-top: 25px;
+  margin-bottom: 12px;
+  font-size: 20px;
+  color: #0b3a73;
+  border-left: 4px solid #0b3a73;
+  padding-left: 10px;
+}
+
+/* GRID FOR ITEMS */
+.fee-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 20px;
+}
+
+/* ---------------- FEE ITEM CARD ---------------- */
+.fee-item-card {
+  background: #ffffff;
+  border: 1px solid #d4e0f2;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+  position: relative;
+}
+
+/* DELETE ICON */
+.delete-icon {
+  position: absolute;
+  right: 14px;
+  top: 12px;
+  cursor: pointer;
+  color: #c62828;
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+
+.delete-icon:hover {
+  color: #b71c1c;
+  transform: scale(1.15);
+}
+
+/* Inputs inside card */
+.fee-title,
+.fee-amount {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ccd9ee;
+  border-radius: 8px;
+  background: #f7faff;
+  font-size: 15px;
+  transition: 0.25s;
+}
+
+.fee-title:focus,
+.fee-amount:focus {
+  border-color: #0b3a73;
+  background: #ffffff;
+  box-shadow: 0 0 6px rgba(11,58,115,0.2);
+}
+
+.fee-item-card label {
+  color: #0b3a73;
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* ---------------- BUTTONS ---------------- */
+.add-item-btn,
+.save-btn {
+  padding: 12px 18px;
+  background: #0b3a73;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 15px;
+  transition: 0.3s ease;
+  font-weight: 600;
+}
+
+.add-item-btn:hover,
+.save-btn:hover {
+  background: #062957;
+  transform: translateY(-2px);
+}
+
+/* HR */
+hr {
+  margin: 25px 0;
+  border: none;
+  height: 1px;
+  background: #d4e0f3;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 600px) {
+  .fee-items {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-fees-container {
+    padding: 20px;
+    margin: 18px;
+  }
+}
+

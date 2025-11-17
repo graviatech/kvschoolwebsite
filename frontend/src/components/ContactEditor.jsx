@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 // import axios from "axios";
+import "../styles/ContactEditor.css";
 import api from "../api";  // relative path to api.js
 
 import toast, { Toaster } from "react-hot-toast";

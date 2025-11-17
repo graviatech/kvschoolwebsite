@@ -83,7 +83,7 @@ import api from "../api";  // relative path to api.js
 import toast, { Toaster } from "react-hot-toast";
 import Swal from "sweetalert2";
 
-import "../styles/main.css";
+import "../styles/AdminGallery.css";
 
 export default function AdminGallery() {
   const [images, setImages] = useState([]);

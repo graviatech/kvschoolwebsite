@@ -1,48 +1,209 @@
+/* -------------------------------------
+     Admin Academics - Edit Section Page
+--------------------------------------*/
+
 .admin-academics-container {
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 25px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  max-width: 950px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 14px;
+  border-left: 6px solid #003366;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
 }
 
+/* Page Title */
 .admin-academics-container h2 {
-  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
   color: #003366;
   margin-bottom: 25px;
+  text-align: center;
 }
 
-.editor-section {
-  margin-bottom: 25px;
+/* Quill Editor */
+.editor-box .ql-container {
+  height: 300px !important;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.editor-section h3 {
-  color: #004080;
-  font-size: 20px;
-  margin-bottom: 10px;
+.editor-box .ql-toolbar {
+  border-radius: 10px 10px 0 0;
 }
 
-.editor-box {
-  background: #f9f9f9;
-  border-radius: 8px;
+/* Buttons Container */
+.editor-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 25px;
 }
 
+/* Save Button */
 .save-btn {
-  background-color: #003366;
-  color: white;
+  background: #003366;
+  color: #fff;
+  padding: 12px 28px;
   border: none;
-  padding: 12px 25px;
-  border-radius: 6px;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 600;
   cursor: pointer;
-  display: block;
-  margin: 0 auto;
+  transition: 0.25s ease;
 }
 
 .save-btn:hover {
-  background-color: #0055aa;
+  background: #00509e;
 }
 
+/* Cancel Button */
+.cancel-btn {
+  background: #ddd;
+  color: #333;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.cancel-btn:hover {
+  background: #c1c1c1;
+}
+
+/* Button Active Effect */
+.save-btn:active,
+.cancel-btn:active {
+  transform: scale(0.97);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-academics-container {
+    padding: 20px;
+  }
+
+  .editor-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .save-btn,
+  .cancel-btn {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------------------------------
+      Admin – Manage Academics Page (Multiple Editors)
+--------------------------------------------------------*/
+
+.admin-academics-container {
+  max-width: 1050px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 14px;
+  border-left: 6px solid #003366;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Page Title */
+.admin-academics-container h2 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #003366;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Section title */
+.editor-section h3 {
+  font-size: 20px;
+  color: #003366;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* Each section box */
+.editor-section {
+  background: #f7faff;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #cbd5e0;
+  margin-bottom: 30px;
+  transition: 0.3s ease;
+}
+
+.editor-section:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Quill Editor */
+.editor-box .ql-container {
+  height: 250px !important;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.editor-box .ql-toolbar {
+  border-radius: 10px 10px 0 0;
+}
+
+/* Save Button */
+.save-btn {
+  display: block;
+  margin: 20px auto 0;
+  background: #003366;
+  color: #fff;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.save-btn:hover {
+  background: #00509e;
+}
+
+.save-btn:active {
+  transform: scale(0.96);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-academics-container {
+    padding: 20px;
+  }
+
+  .editor-section {
+    padding: 15px;
+  }
+
+  .save-btn {
+    width: 100%;
+    padding: 14px;
+  }
+
+  .editor-box .ql-container {
+    height: 200px !important;
+  }
+}
 
 
 

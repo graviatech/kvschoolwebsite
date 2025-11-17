@@ -1,0 +1,82 @@
+/* -------------------------------------
+   ADMIN EXTRA CURRICULAR EDIT PAGE
+--------------------------------------*/
+
+.admin-extra-page {
+  max-width: 1000px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 30px 35px;
+  border-radius: 14px;
+  border-left: 6px solid #003366;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Page Heading */
+.admin-extra-page h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 25px;
+}
+
+/* Section Title */
+.admin-extra-page h3 {
+  font-size: 20px;
+  color: #003366;
+  margin: 15px 0 10px;
+  font-weight: 600;
+}
+
+/* Quill Editor Styling */
+.ql-container {
+  height: 250px !important;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.ql-toolbar {
+  border-radius: 10px 10px 0 0;
+}
+
+/* Save Button */
+.extra-curr-save--btn {
+  background: #003366;
+  color: #fff;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.extra-curr-save--btn:hover {
+  background: #00509e;
+}
+
+.extra-curr-save--btn:active {
+  transform: scale(0.97);
+}
+
+.extra-curr-save--btn:disabled {
+  background: #8aa9c7;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-extra-page {
+    padding: 20px;
+  }
+
+  .extra-curr-save--btn {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+

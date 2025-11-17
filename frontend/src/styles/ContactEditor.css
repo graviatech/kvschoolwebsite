@@ -1,0 +1,69 @@
+/* -----------------------------
+   CONTACT EDITOR PAGE LAYOUT
+------------------------------*/
+
+.admin-editor {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  border-left: 6px solid #003366;
+}
+
+/* Heading */
+.admin-editor h2 {
+  font-size: 26px;
+  margin-bottom: 18px;
+  color: #003366;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Quill Editor */
+.ql-container {
+  height: 300px !important;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.ql-toolbar {
+  border-radius: 10px 10px 0 0;
+}
+
+/* Save Button */
+.contact-editor-save-btn {
+  margin-top: 20px;
+  background: #003366;
+  padding: 12px 25px;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  width: 100%;
+  font-weight: 600;
+}
+
+.contact-editor-save-btn:hover {
+  background: #00509e;
+}
+
+.contact-editor-save-btn:disabled {
+  background: #7a9bbf;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-editor {
+    padding: 20px;
+  }
+
+  .contact-editor-save-btn {
+    font-size: 16px;
+  }
+}
+

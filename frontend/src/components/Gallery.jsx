@@ -63,7 +63,7 @@ import api from "../api";  // relative path to api.js
 import toast, { Toaster } from "react-hot-toast";
 import Swal from "sweetalert2";
 
-import "../styles/main.css";
+import "../styles/Gallery.css";
 
 const Gallery = () => {
   const [images, setImages] = useState([]);

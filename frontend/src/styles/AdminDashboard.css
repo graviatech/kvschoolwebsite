@@ -1,0 +1,105 @@
+/* Page Title */
+h2 {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
+  color: #0a3c78;
+  margin: 20px 0 25px;
+  text-align: left;
+  border-left: 6px solid #0a3c78;
+  padding-left: 12px;
+  font-size: 28px !important;
+}
+
+/* Table Styling */
+.admin-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  margin-top: 10px;
+}
+
+/* Table Header */
+.admin-table thead th {
+  background: #0a3c78;
+  color: white;
+  padding: 14px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Table Rows */
+.admin-table tbody tr {
+  background: #ffffff;
+  box-shadow: 0 0 8px rgba(0,0,0,0.08);
+  border-radius: 8px;
+}
+
+.admin-table tbody td {
+  padding: 14px;
+  font-size: 15px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+/* Rounded row fix */
+.admin-table tbody tr td:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.admin-table tbody tr td:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* Hover Effect */
+.admin-table tbody tr:hover {
+  background: #f5f9ff;
+  transition: 0.25s;
+}
+
+/* View Button */
+.ad-dash-view-btn {
+  padding: 7px 15px;
+  background: #0a3c78;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.ad-dash-view-btn:hover {
+  background: #082d5c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Responsive Table */
+@media(max-width: 768px){
+  .admin-table thead {
+    display: none;
+  }
+
+  .admin-table tbody tr {
+    display: block;
+    margin-bottom: 15px;
+    border-radius: 10px;
+  }
+
+  .admin-table tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 15px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .admin-table tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #555;
+  }
+}

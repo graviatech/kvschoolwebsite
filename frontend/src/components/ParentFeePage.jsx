@@ -489,7 +489,7 @@ import api from "../api";  // relative path to api.js
 
 import Swal from "sweetalert2";
 import toast, { Toaster } from "react-hot-toast";
-import "../styles/main.css";
+import "../styles/ParentFeePage.css";
 
 
 export default function ParentFeePage() {

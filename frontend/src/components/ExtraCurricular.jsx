@@ -72,6 +72,7 @@ import api from "../api";  // relative path to api.js
 import Banner from "./Banner";
 import toast, { Toaster } from "react-hot-toast";
 import Swal from "sweetalert2";
+import "../styles/ExtraCurricular.css";
 
 export default function ExtraCurricular() {
   const [sections, setSections] = useState({});

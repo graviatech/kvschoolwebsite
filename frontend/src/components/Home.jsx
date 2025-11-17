@@ -333,7 +333,7 @@ import { decryptData } from "../utils/encryption";
 import toast, { Toaster } from "react-hot-toast";
 import Swal from "sweetalert2";
 
-import "../styles/main.css";
+import "../styles/Home.css";
 
 const SERVER_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
 
@@ -435,24 +435,30 @@ export default function Home() {
         )}
 
         {/* Welcome + Activities */}
-        <section className="welcome-activities-container">
-          <div
-            className="welcome-text"
-            dangerouslySetInnerHTML={{ __html: data.welcomeText }}
-          ></div>
+        <section>
+          <div className="welcome-activities-container">
 
-          <div className="activities-slider-wrapper">
-            <h3 style={{color: "#0078d4", fontSize:"30px"}}>School Activities</h3>
-            {data.activities.length > 0 && (
-              <div className="activities-slider-single">
-                <img
-                  key={activityIndex}
-                  src={`${SERVER_URL}${data.activities[activityIndex]}`}
-                  alt={`activity-${activityIndex}`}
-                />
+            {/* Welcome Text Card */}
+            <div className="home-card">
+              <div className="welcome-text-area">
+                <div dangerouslySetInnerHTML={{ __html: data.welcomeText }} />
               </div>
-            )}
+            </div>
+
+           {/* Activity Image Card */}
+           <div className="home-card">
+            <h3 className="activity-title">School Activities</h3>
+
+            <div className="activity-image-box">
+              <img
+                src={`${SERVER_URL}${data.activities[activityIndex]}`}
+                alt="activity"
+              />
+            </div>
           </div>
+
+         </div>
+
         </section>
 
         {/* 3-Column Section */}

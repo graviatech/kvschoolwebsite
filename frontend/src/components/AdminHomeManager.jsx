@@ -374,7 +374,7 @@ import api from "../api";
 import Swal from "sweetalert2";
 import toast, { Toaster } from "react-hot-toast";
 import { encryptData, decryptData } from "../utils/encryption";
-import "../styles/main.css";
+import "../styles/AdminHomeManager.css";
 
 const SERVER_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
 

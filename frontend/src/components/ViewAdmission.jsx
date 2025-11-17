@@ -7,7 +7,7 @@ import api from "../api";  // relative path to api.js
 
 import { useParams, Link } from "react-router-dom"; 
 import toast, { Toaster } from "react-hot-toast";
-import "../styles/main.css";
+import "../styles/ViewAdmission.css";
 
 export default function ViewAdmission() {
   const { id } = useParams(); 

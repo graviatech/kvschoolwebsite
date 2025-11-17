@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import api from "../api";  // relative path to api.js
 
 import toast, { Toaster } from "react-hot-toast";
-import '../styles/main.css';
+import '../styles/AdminLogin.css';
 
 export default function AdminLogin() {
   const [form, setForm] = useState({});

@@ -1,0 +1,120 @@
+/* ---------- PAGE WRAPPER ---------- */
+.fee-structure-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: #f4f6fb;
+  display: flex;
+  justify-content: center;
+}
+
+/* ---------- CARD ---------- */
+.fee-card {
+  width: 90%;
+  max-width: 900px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* ---------- TITLE ---------- */
+.page-title {
+  text-align: center;
+  color: #1a237e;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* ---------- NOTES / DESCRIPTION ---------- */
+.fee-description {
+  background: #f0f3ff;
+  border-left: 5px solid #1a237e;
+  padding: 15px 18px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ---------- TABLE CONTAINER ---------- */
+.fee-table-container {
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+}
+
+/* ---------- TABLE ---------- */
+.fee-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.fee-table th {
+  background: #1a237e;
+  color: white;
+  padding: 14px;
+  font-size: 17px;
+  text-align: left;
+}
+
+.fee-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 16px;
+  background: #ffffff;
+}
+
+.fee-table tr:nth-child(even) td {
+  background: #f8f9ff;
+}
+
+/* ---------- TOTAL ROW ---------- */
+.total-row td {
+  background: #e8ebff !important;
+  font-size: 17px;
+  font-weight: bold;
+  color: #000;
+}
+
+/* ---------- LOADING TEXT ---------- */
+.loading-text {
+  text-align: center;
+  font-size: 20px;
+  color: #1a237e;
+  margin-top: 50px;
+}
+
+/* ---------- ANIMATION ---------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 600px) {
+  .fee-card {
+    padding: 20px;
+  }
+
+  .page-title {
+    font-size: 22px;
+  }
+
+  .fee-table td,
+  .fee-table th {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+

@@ -109,7 +109,7 @@ import api from "../api";  // relative path to api.js
 import ReactQuill from "react-quill";
 import toast, { Toaster } from "react-hot-toast";
 import "react-quill/dist/quill.snow.css";
-import "../styles/main.css"; // We'll create this
+import "../styles/AdminManageFee.css"; // We'll create this
 
 export default function AdminManageFees() {
   const [fs, setFs] = useState({

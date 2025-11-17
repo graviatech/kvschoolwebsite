@@ -1,6 +1,6 @@
 // ActivityCarousel.jsx
 import React, { useEffect, useState } from "react";
-
+import "../styles/Home.css";
 /*
 Usage: <ActivityCarousel images={[ "/assets/activity1.jpg", ... ]} />
 Auto-advances every 3.5s; has prev/next controls.

@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 import api from "../api";  // relative path to api.js
 
 import toast, { Toaster } from "react-hot-toast";
-import "../styles/main.css";
+import "../styles/AdminStudentsFee.css";
 
 export default function AdminStudentsFees() {
   const [students, setStudents] = useState([]);
